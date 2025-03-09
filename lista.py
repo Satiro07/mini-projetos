@@ -46,8 +46,11 @@ while True:
         ind1 = 1 # valores
         ind2 = 2 # tipos
         printar = len(geral) / 3
+        print(f'{"produtos":<10} {"valores":<10} {"tipos":<10}')
+
         for i in range(0, int(printar)):
-            print(f'produto: {geral[ind]}, preço: R${geral[ind1]}, tipo: {geral[ind2]}')
+            
+            print(f'{geral[ind][0]:<10} R${geral[ind1][0]:<10} {geral[ind2][0]:<10}')
             ind += 3
             ind1 += 3
             ind2 += 3

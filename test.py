@@ -24,5 +24,5 @@ geral = [[5], [4], [3]]
 ind = 0
 ind1 = 1
 ind2 = 2
-print(f'{"produtos":>10} {"valores":>10} {"tipos":>10}')
-print(f'{(geral[ind]):>10} {geral[ind1]} {geral[ind2]}')
+print(f'{"produtos":<10} {"valores":<10} {"tipos":<10}')
+print(f'{geral[0][ind]:<10} {geral[1][0]:<10} {geral[2][0]:<10}')

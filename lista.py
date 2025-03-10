@@ -25,6 +25,7 @@ while True:
                 continue
             else:
                 break
+
     elif esc == '2':
         if not geral:
             print('Você precisa adicionar alimentos!')
@@ -33,6 +34,7 @@ while True:
             menu_2()
             escolha = input('Escolha: ')
             c = 0
+
             if escolha == '1':
                 for produto in geral:
                     print(f'{c}. {produto[0]}')
@@ -42,6 +44,7 @@ while True:
                     indice = int(input('Indice do produto que deseja editar: '))
                 esc_prod = input('Novo nome do produto: ')
                 geral[indice][0] = esc_prod
+
             elif escolha == '2':
                 for produto in geral:
                     print(f'{c}. {produto[0]:<10} R${produto[1]:<10}')
@@ -51,6 +54,7 @@ while True:
                     indice = int(input('Indice do valor que deseja editar: '))
                 esc_prod = input('Novo valor: ')
                 geral[indice][1] = esc_prod
+
             elif escolha == '3':
                 for produto in geral:
                     print(f'{c}. {produto[0]:<10} R${produto[1]:<10} {produto[2]:<10}')
@@ -60,6 +64,7 @@ while True:
                     indice = int(input('Indice do tipo que deseja editar: '))
                 esc_prod = input('Novo tipo: ')
                 geral[indice][2] = esc_prod
+
     elif esc == '3':
         c = 0
         for produto in geral:

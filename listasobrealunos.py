@@ -10,6 +10,13 @@ def menu():
     print('1. adicionar aluno')
     print('2. remover aluno')
     print('3. boletim')
+    print('4. editar')
+
+def menu_editar():
+    print('O que deseja editar?')
+    print('1. Nome do aluno')
+    print('2. Nome da matéria')
+    
 
 lista = []
 while True:
@@ -31,8 +38,9 @@ while True:
                 nota = 1
                 mat.append(materia)
                 while 0 <= nota <= 10:
-                    nota = int(input('Digite a nota:'))
-                    mat.append(nota)
+                    nota = float(input('Digite a nota:'))
+                    if 0 <= nota <= 10:
+                        mat.append(nota)
                 materia_nota.append(mat)
                 cont = input('deseja adicionar outra máteria? [s/n] ')
             lista.append(materia_nota)
@@ -48,10 +56,62 @@ while True:
     elif esc == '3':
         for aluno in lista:
             print(aluno)
+    elif esc == '4':
+        menu_editar()
+        escolha = input('Escolha uma opção: ')
+        if escolha == '1':
+            if not lista:
+                print('Precisa add algum aluno!')
+            else:
+                while True:
+                    v = False
+                    chave_matricula = int(input('Digite a mátricula do aluno: '))
+                    for i in range(0, len(lista)):
+                        if chave_matricula == lista[i][1]:
+                            editar = input('Novo nome: ')
+                            lista[i][0] = editar
+                            v = True
+                    if v == True:
+                        print('Nome foi mudado com sucesso')
+                        break
+                    else:
+                        print('Matricula não encontrada')
+        elif escolha == '2':
+            if not lista:
+                print('Precisa add algum aluno!')
+            else:
+                while True:
+                    c = 0
+                    two = 2
+                    v = False
+                    chave_matricula = int(input('Digite a mátricula do aluno: '))
+                    
+                    while c < len(lista):
+                        print(f'{c+1}. {lista[0][two][0]}')
+                        c += 1
+                        two += 1
+                    for i in range(0, len(lista)):
+                        if chave_matricula == lista[i][1]:
+                            mudar_mate = input('Nome da materia que deseja editar: ')
+                            if mudar_mate == lista[i][2][0]:
+                                editar = input('Novo nome da matéria: ')
+                                lista[i][2][0] = editar
+                                v = True
+                    if v == True:
+                        print('Nome da materia foi mudado com sucesso')
+                        break
+                    else:
+                        print('Matricula não encontrada')
 
+                    
+                
+                
+                    
+                
+
+            
     else:
-        print(lista)
-        print(len(lista))
+        break
 
 
 

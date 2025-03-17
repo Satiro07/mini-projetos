@@ -1,11 +1,3 @@
-# Crie um programa que permita ao usuário registrar
-# informações de alunos incluindo nome, matrícula e
-# notas em várias disciplinas. Use uma listra aninhada
-# para representar os alunos, onde cada aluno é uma
-# lista com três elementos: nome, matrícula e uma
-# lista de notas. O programa deve permitir adicionar
-# novos alunos e removê-los pelo número de matrícula.
-
 def menu():
     print('1. adicionar aluno')
     print('2. remover aluno')
@@ -17,7 +9,6 @@ def menu_editar():
     print('1. Nome do aluno')
     print('2. Nome da matéria')
     
-
 lista = []
 while True:
     menu()
@@ -45,14 +36,12 @@ while True:
                 cont = input('deseja adicionar outra máteria? [s/n] ')
             lista.append(materia_nota)
             continuar = input('deseja adicionar outro aluno? [s/n] ')
-
     elif esc == '2':
         remover = int(input('Digite a matricula do aluno que deseja remover: '))
         for i in range(0, len(lista)):
             if remover == lista[i][1]:
                 lista.remove(lista[i])
                 break   
-
     elif esc == '3':
         for aluno in lista:
             print(aluno)
@@ -80,52 +69,51 @@ while True:
             if not lista:
                 print('Precisa add algum aluno!')
             else:
+                
                 while True:
-                    c = 0
-                    two = 2
-                    v = False
                     chave_matricula = int(input('Digite a mátricula do aluno: '))
+                    two = 2
                     
-                    while c < len(lista):
-                        print(f'{c+1}. {lista[0][two][0]}')
-                        c += 1
+                    lei = len(lista)
+                    for i in range(0, lei):
+                        print(lista[0][two][0])
                         two += 1
+                        if lista[0][two][0]:
+                            continue
+                        else:
+                            break
                     for i in range(0, len(lista)):
                         if chave_matricula == lista[i][1]:
-                            mudar_mate = input('Nome da materia que deseja editar: ')
-                            if mudar_mate == lista[i][2][0]:
-                                editar = input('Novo nome da matéria: ')
-                                lista[i][2][0] = editar
-                                v = True
+                            nome_velho = input('Nome que deseja mudar: ')
+                            two = 2
+                            for i in range(0, len(lista)):
+                                print(lista[i][two][0])
+                                if nome_velho == lista[i][two][0]:
+                                    editar = input('Novo nome da materia: ')
+                                    lista[i][two][0] = editar
+                                two += 1
+                            v = True
                     if v == True:
                         print('Nome da materia foi mudado com sucesso')
                         break
                     else:
                         print('Matricula não encontrada')
-
                     
-                
-                
-                    
-                
-
-            
     else:
         break
 
 
 
-# notas = []
-# notasa = 'matematica: 10'
-
-# materia_nota = []
-# nome1 = 'jose'
-# mat1 = 120
-# materia_nota.append(notasa)
-# lista.append([nome1, mat1, materia_nota])
+# notas = ['Jose', '7', ['Mat', 1, 2, 4], ['hist', 10], ['geo', 10, 8]]
 
 
 
-
-# print(lista)
-# print(len(lista))
+# two = 2
+# lei = len(notas)
+# for i in range(0, lei):
+#     print(notas[two][0])
+    
+#     if lei - 1 == two:
+#         break
+#     two += 1
+# print(len(notas))

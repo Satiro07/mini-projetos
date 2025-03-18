@@ -75,18 +75,20 @@ while True:
                     for i in range(0, len(lista)):
                         if chave_matricula == lista[i][1]:
                             two = 2
-                            lei = len(lista)
+                            lei = len(lista[i])
                             c = i
-                            for i in range(0, lei+1):
+                            cont = 0
+                            for i in range(0, lei-2):
                                 print(lista[c][two][0])
                                 two += 1
-                                if lei *2 == two:
+                                if cont == lei-2:
                                     break
+                                cont += 1
                             nome_velho = input('Nome que deseja mudar: ')
                             two = 2
                             for i in range(0, len(lista)):
                                 print(lista[i][two][0])
-                                if nome_velho == lista[i][two][0]:
+                                if nome_velho == lista[c][two][0]:
                                     editar = input('Novo nome da materia: ')
                                     lista[i][two][0] = editar
                                 two += 1
@@ -95,14 +97,13 @@ while True:
                         print('Nome da materia foi mudado com sucesso')
                         break
                     else:
-                        print('Matricula não encontrada')
-                    
+                        print('Matricula não encontrada')              
     else:
         break
 
 
 
-# notas = ['Jose', '7', ['Mat', 1, 2, 4], ['hist', 10], ['geo', 10, 8]]
+# notas = [['Jose', '7', ['Mat', 1, 2, 4], ['hist', 10], ['geo', 10, 8]]]
 
 
 
@@ -114,4 +115,4 @@ while True:
 #     if lei - 1 == two:
 #         break
 #     two += 1
-# print(len(notas))
+# print(len(notas[0]))

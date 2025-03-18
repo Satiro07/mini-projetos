@@ -72,18 +72,16 @@ while True:
                 
                 while True:
                     chave_matricula = int(input('Digite a mátricula do aluno: '))
-                    two = 2
-                    
-                    lei = len(lista)
-                    for i in range(0, lei):
-                        print(lista[0][two][0])
-                        two += 1
-                        if lista[0][two][0]:
-                            continue
-                        else:
-                            break
                     for i in range(0, len(lista)):
                         if chave_matricula == lista[i][1]:
+                            two = 2
+                            lei = len(lista)
+                            c = i
+                            for i in range(0, lei+1):
+                                print(lista[c][two][0])
+                                two += 1
+                                if lei *2 == two:
+                                    break
                             nome_velho = input('Nome que deseja mudar: ')
                             two = 2
                             for i in range(0, len(lista)):

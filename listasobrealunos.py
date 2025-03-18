@@ -89,7 +89,9 @@ while True:
                     c = c
                     nome_velho = input('Nome que deseja mudar: ')
                     two = 2
-                    for i in range(0, len(lista)): 
+                    lei = len(lista[c])
+                    v = False
+                    for i in range(0, lei-2): 
                         if nome_velho == lista[c][two][0]:
                             editar = input('Novo nome da materia: ')
                             lista[c][two][0] = editar

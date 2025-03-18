@@ -84,15 +84,19 @@ while True:
                                 if cont == lei-2:
                                     break
                                 cont += 1
-                            nome_velho = input('Nome que deseja mudar: ')
-                            two = 2
-                            for i in range(0, len(lista)):
-                                print(lista[i][two][0])
-                                if nome_velho == lista[c][two][0]:
-                                    editar = input('Novo nome da materia: ')
-                                    lista[i][two][0] = editar
-                                two += 1
+                        else:
+                            continue
+                    c = c
+                    nome_velho = input('Nome que deseja mudar: ')
+                    two = 2
+                    for i in range(0, len(lista)): 
+                        if nome_velho == lista[c][two][0]:
+                            editar = input('Novo nome da materia: ')
+                            lista[c][two][0] = editar
                             v = True
+                            break
+                        two += 1
+                            
                     if v == True:
                         print('Nome da materia foi mudado com sucesso')
                         break

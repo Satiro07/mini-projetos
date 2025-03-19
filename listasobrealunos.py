@@ -106,19 +106,3 @@ while True:
                         print('Matricula não encontrada')              
     else:
         break
-
-
-
-# notas = [['Jose', '7', ['Mat', 1, 2, 4], ['hist', 10], ['geo', 10, 8]]]
-
-
-
-# two = 2
-# lei = len(notas)
-# for i in range(0, lei):
-#     print(notas[two][0])
-    
-#     if lei - 1 == two:
-#         break
-#     two += 1
-# print(len(notas[0]))

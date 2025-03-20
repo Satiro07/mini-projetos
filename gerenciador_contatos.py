@@ -7,20 +7,19 @@ def menu():
 
 def adicionar_contatos(nome, numero):
     with open(arquivo_caminho, 'w') as arquivo:
-        arquivo.write(nome)
-        arquivo.write(numero)
+        arquivo.write(f'{nome};{numero}\n')    
     return arquivo_caminho
 
 def add_contatos2(nome, numero):
     with open(arquivo_caminho, 'a') as arquivo:
-        arquivo.write(nome)
-        arquivo.write(numero)
+        arquivo.write(f'{nome};{numero}\n')
     return arquivo_caminho
 
 import os
 import shutil
 
 desktop = r'C:\Users\José Satiro\OneDrive\Desktop'
+
 nome_pasta = input('Nome da pasta que deseja criar: ')
 
 nome_arquivo = input('Nome do arquivo (escreva com a extensão ".txt"): ')
@@ -33,13 +32,13 @@ while True:
     escolha = input('Escolha uma opção: ')
     if escolha == '1':
         if c == 0:
-            nome_contato = input('Nome do contato que deseja adicionar: ') + ' '
-            numero_contato = input('Número do contato que deseja adcionar: (ex:9999-9999) ') + ' '
+            nome_contato = input('Nome do contato que deseja adicionar: ')
+            numero_contato = input('Número do contato que deseja adcionar: (ex:9999-9999) ')
             adicionar_contatos(nome_contato, numero_contato)  
             print(f'Contato {nome_contato}adicionado com sucesso!')
         else: 
-            nome_contato = input('Nome do contato que deseja adicionar: ') + ' '
-            numero_contato = input('Número do contato que deseja adcionar: (ex:9999-9999) ') + ' '
+            nome_contato = input('Nome do contato que deseja adicionar: ')
+            numero_contato = input('Número do contato que deseja adcionar: (ex:9999-9999) ')
             add_contatos2(nome_contato, numero_contato)  
             print(f'Contato {nome_contato}adicionado com sucesso!')
         c += 1
@@ -51,32 +50,24 @@ while True:
             print(f'{"SEUS CONTATOS ":-^20}')
             print('')
             with open(arquivo_caminho, 'r') as arquivo:
-                lista = arquivo.read()
-                lista = lista.split(' ')
-                lista.pop()
-            c = 0
-            for i in range(0, int(len(lista)/2)):
-                print(f'Nome: {lista[c]}, telefone: {lista[c+1]}')
-                c += 2
+                for linha in arquivo:
+                    nome, numero = linha.strip().split(';')
+                    print(f'Nome: {nome} - Telefone: {numero}')
 
     elif escolha == '3':
-        nome = input('Nome do contato: ')
-        with open(arquivo_caminho, 'r') as arquivo:
-            lista = arquivo.read()
-            lista = lista.split(' ')
-            lista.pop()
-        c = 0
+        nome_cont = input('Nome do contato: ')
         t = False
-        while c <= int(len(lista)/2):
-            if nome.lower() == lista[c].lower():
-                print('Contato encontrado')
-                print(f'Nome: {lista[c]}, telefone: {lista[c+1]}')
-                t = True
-                break
-            c += 2
+        with open(arquivo_caminho, 'r') as arquivo:
+            for linha in arquivo:
+                nome, numero = linha.strip().split(';')
+                if nome_cont.lower() == nome.lower():
+                    print('Contato encontrado')
+                    print(f'Nome: {nome} - Telefone: {numero}')
+                    t = True
+                    break
         if t == False:
             print(f'Contato {nome} não encontrado')
-
+            
     elif escolha == '4':
         print('saindo...')
         break

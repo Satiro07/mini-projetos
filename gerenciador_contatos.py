@@ -6,14 +6,10 @@ def menu():
     print('4. Sair do Gerenciador de Contatos')
 
 def adicionar_contatos(nome, numero):
-    with open(arquivo_caminho, 'w') as arquivo:
+    with open(arquivo_caminho, 'a') as arquivo:
         arquivo.write(f'{nome};{numero}\n')    
     return arquivo_caminho
 
-def add_contatos2(nome, numero):
-    with open(arquivo_caminho, 'a') as arquivo:
-        arquivo.write(f'{nome};{numero}\n')
-    return arquivo_caminho
 
 import os
 import shutil
@@ -26,21 +22,19 @@ nome_arquivo = input('Nome do arquivo (escreva com a extensão ".txt"): ')
 
 arquivo_caminho = os.path.join(desktop, nome_arquivo)
 
+if not os.path.exists(arquivo_caminho):
+    with open(arquivo_caminho, 'w') as arquivo:
+        pass
+
 c = 0
 while True:
     menu()
     escolha = input('Escolha uma opção: ')
     if escolha == '1':
-        if c == 0:
-            nome_contato = input('Nome do contato que deseja adicionar: ')
-            numero_contato = input('Número do contato que deseja adcionar: (ex:9999-9999) ')
-            adicionar_contatos(nome_contato, numero_contato)  
-            print(f'Contato {nome_contato}adicionado com sucesso!')
-        else: 
-            nome_contato = input('Nome do contato que deseja adicionar: ')
-            numero_contato = input('Número do contato que deseja adcionar: (ex:9999-9999) ')
-            add_contatos2(nome_contato, numero_contato)  
-            print(f'Contato {nome_contato}adicionado com sucesso!')
+        nome_contato = input('Nome do contato que deseja adicionar: ')
+        numero_contato = input('Número do contato que deseja adcionar: (ex:9999-9999) ')
+        adicionar_contatos(nome_contato, numero_contato)  
+        print(f'Contato {nome_contato}adicionado com sucesso!')
         c += 1
 
     elif escolha == '2':
@@ -80,3 +74,6 @@ if os.path.exists(arquivo_caminho):
 
     pasta = os.path.join(pasta, nome_arquivo)
     shutil.move(arquivo_caminho, pasta)
+    print(f'Arquivo movido para: {pasta}')
+else:
+    print(f'Nenhum arquivo de contatos foi criado')

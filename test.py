@@ -28,8 +28,10 @@
 letras = []
 palavra = ['ninho']
 
-
+cont = len(palavra[0])
 pala_comp = ''
+num = 0
+fim = []
 while True:
     c = 0
     letra = input('Letra: ')
@@ -42,14 +44,26 @@ while True:
         while quant > 0 or c < len(palavra[0]):
             
             if letra == palavra[0][c]:
-                letras.append(letra)
-                letras.count(letra)
+                if len(letras) == len(palavra[0]):
+                    letras.remove(letras[c])
+                    letras.insert(c, letra)
+                else:
+                    letras.append(letra)
+                    letras.count(letra)
+            else:
+                if len(letras) == len(palavra[0]):
+                    letra.replace(pala_comp[c], letra)
+                else:
+                    letras.append('_')
             c += 1
             quant -= 1
     print(letras)
     print(palavra[0][1])
-    if letra == 's':
-        for i in range(0, quant):
-            pala_comp += letras[0][i]
-        print(pala_comp)
-        break
+    
+    for i in range(0, cont):
+        pala_comp = letras
+    print(pala_comp)
+    if letras[num] != '_':
+        fim.append(letras[num])
+        num += 1
+    print(fim)

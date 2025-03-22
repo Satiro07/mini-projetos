@@ -33,6 +33,7 @@ pala_comp = ''
 num = 0
 fim = []
 while True:
+    
     c = 0
     letra = input('Letra: ')
     quant = (len(palavra))
@@ -52,18 +53,17 @@ while True:
                     letras.count(letra)
             else:
                 if len(letras) == len(palavra[0]):
-                    letra.replace(pala_comp[c], letra)
+                    if letra != pala_comp[c]:
+                        letra.replace(pala_comp[c], letra)
                 else:
                     letras.append('_')
             c += 1
             quant -= 1
-    print(letras)
-    print(palavra[0][1])
+    for letra in letras:
+        print(letra, end=' ')
+    print()
     
     for i in range(0, cont):
         pala_comp = letras
     print(pala_comp)
-    if letras[num] != '_':
-        fim.append(letras[num])
-        num += 1
-    print(fim)
+    letras = pala_comp

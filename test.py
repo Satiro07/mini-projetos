@@ -25,60 +25,51 @@
 # print(geral)
 
 
-letras = 'ninho oi'
+letras = []
 palavra = ['ninho']
-letras.replace(0, 'nin')
-print(letras)
 cont = len(palavra[0])
-pala_comp = ''
-num = 0
-fim = []
-# while True:
-#     c = 0
-#     letra = input('Letra: ')
-#     quant = (len(palavra))
-#     if letra not in palavra[0]:
-#         print('erro')
-#     elif letra in letras:
-#         print('Letra ja adicionada')
-#     else:
-#         while quant > 0 or c < len(palavra[0]):     
-#             if letra == palavra[0][c]:
-#                 if len(letras) == len(palavra[0]):
-#                     if letra == palavra[0][c]:
-#                         if c == 0:
-#                             print(letras)
+
+while True:
+    c = 0
+    letra = input('Letra: ')
+
+    if letra not in palavra[0]:
+        print('erro')
+
+    elif letra in letras:
+        print('Letra ja adicionada')
+
+    else:
+        while c < len(palavra[0]):     
+            if letra == palavra[0][c]:
+                if len(letras) == len(palavra[0]):
+                    if letra == palavra[0][c]:
+                        
+                            print(letras)
+                            letras.remove(letras[c])
+                            letras.insert(c, palavra[0][c])
                             
-#                             letras.replace(letras[c], palavra[0][c])
-                            
-#                             print(letras)
-#                         else:
-#                             print(letras)
-                            
-#                             letras.replace(letras[c], palavra[0][c])
+                            print(letras)
+                    else:
+                        letras.append('_')
+                        letras.remove(letras[c])
 
-#                             print(letras)
+                else:
+                    if len(letras) < len(palavra[0]):
+                        letras.append(letra)
 
-#                 else:
-#                     if len(letras) < len(palavra[0]):
-#                         letras.append(letra)
+            else:
+                if len(letras) == len(palavra[0]):
+                    if letra == palavra[0][c]:
+                        pass
 
-#             else:
-#                 if len(letras) == len(palavra[0]):
-#                     if letra == palavra[0][c]:
-#                         pass
+                else:
+                    if len(letras) < len(palavra[0]):
+                        letras.append('_')
+            c += 1     
 
-#                 else:
-#                     if len(letras) < len(palavra[0]):
-#                         letras.append('_')
-#             c += 1
-#             quant -= 1
-
-#     for letra in letras:
-#         print(letra, end=' ')
-#     print()
+    for letra in letras:
+        print(letra, end=' ')
+    print()
     
-#     for i in range(0, cont):
-#         pala_comp = letras
-#     print(pala_comp)
-#     letras = pala_comp
+    

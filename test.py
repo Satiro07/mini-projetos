@@ -44,22 +44,17 @@ while True:
     else:
         while c < len(palavra[0]):     
             if letra == palavra[0][c]:
+                
                 if len(letras) == len(palavra[0]):
+                    
                     if letra == palavra[0][c]:
                         
                             print(letras)
-                            letras.remove(letras[c])
+                            letras.remove(letras[c]) 
                             letras.insert(c, palavra[0][c])
                             
                             print(letras)
-                            
-
-                        
-
-                
-
-            
-            
+                       
             c += 1     
             
     for letra in letras:

@@ -28,11 +28,13 @@
 letras = []
 palavra = ['ninho']
 cont = len(palavra[0])
-
+quant = len(palavra[0])
+for i in range(0, quant):
+    letras.append('_')
 while True:
     c = 0
     letra = input('Letra: ')
-
+    
     if letra not in palavra[0]:
         print('erro')
 
@@ -46,29 +48,20 @@ while True:
                     if letra == palavra[0][c]:
                         
                             print(letras)
-                            letras.remove(letras[-1])
+                            letras.remove(letras[c])
                             letras.insert(c, palavra[0][c])
                             
                             print(letras)
                             
-                    else:
-                        letras.append('_')
+
                         
 
-                else:
-                    if len(letras) < len(palavra[0]):
-                        letras.append(letra)
+                
 
-            else:
-                if len(letras) == len(palavra[0]):
-                    if letra == palavra[0][c]:
-                        pass
-
-                else:
-                    if len(letras) < len(palavra[0]):
-                        letras.append('_')
+            
+            
             c += 1     
-
+            
     for letra in letras:
         print(letra, end=' ')
     print()

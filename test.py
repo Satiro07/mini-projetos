@@ -26,6 +26,7 @@
 
 
 letras = []
+
 palavra = ['ninho']
 cont = len(palavra[0])
 quant = len(palavra[0])

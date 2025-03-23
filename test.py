@@ -46,13 +46,14 @@ while True:
                     if letra == palavra[0][c]:
                         
                             print(letras)
-                            letras.remove(letras[c])
+                            letras.remove(letras[-1])
                             letras.insert(c, palavra[0][c])
                             
                             print(letras)
+                            
                     else:
                         letras.append('_')
-                        letras.remove(letras[c])
+                        
 
                 else:
                     if len(letras) < len(palavra[0]):

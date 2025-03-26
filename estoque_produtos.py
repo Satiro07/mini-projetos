@@ -5,7 +5,6 @@ def menu():
     print('3 - Remover produto')
     print('4 - Mostrar estoque')
     print('5 - Sair')
-
 dic = {}
 while True:
     menu()
@@ -13,7 +12,6 @@ while True:
     if escolha == '1':
         continuar = 's'
         while continuar != 'n':
-
             nome_produto = input('Nome do produto: ')
             quantidade = int(input('Quantidade: '))
             preco = float(input('Preço unitário: '))
@@ -39,8 +37,7 @@ while True:
             for k, v in dic.items():
                 print(f'{k} - Quantidade: {v[0]} - Preço total: R${v[1]:.2f}')
         else:
-            print('Você precisa adicionar produtos primeiro!')
-            
+            print('Você precisa adicionar produtos primeiro!')      
     elif escolha == '5':
         break
     else:

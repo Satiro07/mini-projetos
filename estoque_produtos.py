@@ -43,5 +43,5 @@ while True:
     else:
         print('Escolha uma opção válida!')
     
-
+print()
 # \n

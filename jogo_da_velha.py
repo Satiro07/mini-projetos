@@ -3,23 +3,25 @@ from random import randint, choice
 
 def jogada_maquina(): # jogada da máquina
     escolha_maquina = randint(resto[0],resto[-1])-1
+    
+    while escolha_maquina in jogadas:
+        escolha_maquina = randint(resto[0],resto[-1])-1
+    
     print(f'Escolha da máquina: posição {escolha_maquina+1}')
     print()
-    while escolha_maquina+1 in jogadas:
-        escolha_maquina = randint(resto[0],resto[-1])-1
-    escolha_maquina += 1
+
     if escolha_maquina not in jogadas:
         jogadas.append(escolha_maquina)
-        resto.remove(escolha_maquina)
+        resto.remove(escolha_maquina+1)
     for i in range(0, 1):
-        if escolha_maquina-1 <= 2: # -1 pois a máquina escolhe com base nos números que tem no "resto" e o -1 deixa na posição do índice
-            c = escolha_maquina-1
+        if escolha_maquina <= 2: # -1 pois a máquina escolhe com base nos números que tem no "resto" e o -1 deixa na posição do índice
+            c = escolha_maquina
             cont = 0
-        elif escolha_maquina-1 <= 5:
-            c = escolha_maquina-4
+        elif escolha_maquina <= 5:
+            c = escolha_maquina-3
             cont = 1
         else:
-            c = escolha_maquina-7
+            c = escolha_maquina-6
             cont = 2
         array[cont][c] = 1
     
@@ -28,20 +30,20 @@ def jogada_jogador(): # jogada do jogador
     print()
     print(f'Escolha jogador: posição {escolha_jogador+1}')
     print()
-    escolha_jogador += 1
+    
     if escolha_jogador not in jogadas:
         jogadas.append(escolha_jogador)
-        resto.remove(escolha_jogador)
+        resto.remove(escolha_jogador+1)
 
     for y in range(0,1):
-        if escolha_jogador-1 <= 2: # -1 pois o jogador escolhe com base nos números que tem no "resto" e o -1 deixa na posição do índice
-            c = escolha_jogador-1
+        if escolha_jogador <= 2: # -1 pois o jogador escolhe com base nos números que tem no "resto" e o -1 deixa na posição do índice
+            c = escolha_jogador
             cont = 0
-        elif escolha_jogador-1 <= 5:
-            c = escolha_jogador-4
+        elif escolha_jogador <= 5:
+            c = escolha_jogador-3
             cont = 1
         else:
-            c = escolha_jogador-7
+            c = escolha_jogador-6
             cont = 2
         array[cont][c] = 3
 
@@ -121,6 +123,7 @@ print(f'{comecar} irá começar!')
 print()
 
 while True:
+
     print(f'{array}\n')
 
     comecar = comecar

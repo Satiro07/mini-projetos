@@ -8,7 +8,7 @@ def menu():
 
 
 
-lista = []
+
 dic = {}
 while True:
     

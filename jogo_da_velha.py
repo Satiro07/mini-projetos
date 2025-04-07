@@ -14,7 +14,7 @@ def jogada_maquina(): # jogada da máquina
         jogadas.append(escolha_maquina)
         resto.remove(escolha_maquina+1)
     for i in range(0, 1):
-        if escolha_maquina <= 2: # -1 pois a máquina escolhe com base nos números que tem no "resto" e o -1 deixa na posição do índice
+        if escolha_maquina <= 2: 
             c = escolha_maquina
             cont = 0
         elif escolha_maquina <= 5:
@@ -36,7 +36,7 @@ def jogada_jogador(): # jogada do jogador
         resto.remove(escolha_jogador+1)
 
     for y in range(0,1):
-        if escolha_jogador <= 2: # -1 pois o jogador escolhe com base nos números que tem no "resto" e o -1 deixa na posição do índice
+        if escolha_jogador <= 2: 
             c = escolha_jogador
             cont = 0
         elif escolha_jogador <= 5:

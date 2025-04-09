@@ -23,12 +23,12 @@ def jogada_maquina(): # jogada da máquina
         else:
             c = escolha_maquina-6
             cont = 2
-        array[cont][c] = 1
+        array[cont][c] = 'X'
     
 def jogada_jogador(): # jogada do jogador
     print()
     escolha_jogador = int(input(f'Escolha uma posição {resto}: '))-1
-    while escolha_jogador in jogadas or escolha_jogador > 9:
+    while escolha_jogador in jogadas or escolha_jogador > 9 or escolha_jogador < 0:
         print('Escolha uma posição válida!')
         escolha_jogador = int(input(f'Escolha uma posição {resto}: '))-1
 
@@ -48,15 +48,15 @@ def jogada_jogador(): # jogada do jogador
         else:
             c = escolha_jogador-6
             cont = 2
-        array[cont][c] = 3
+        array[cont][c] = 'O'
 
-def verificar_horizontal(array, nome, nume): # verificação apenas na horizontal
-    num = nume
+def verificar_horizontal(array, nome, simbolo): # verificação apenas na horizontal
+    simb = simbolo
     cont = 0
     while True:
         contagem = 0
         for i in range(0, 3):
-            if array[cont][i] != num:
+            if array[cont][i] != simb:
                 continue
             else:
                 contagem += 1
@@ -66,13 +66,13 @@ def verificar_horizontal(array, nome, nume): # verificação apenas na horizonta
             break
         cont += 1
     
-def verificar_diagonal(array, nome, nume): # verificação apenas na diagonal
-    num = nume
+def verificar_diagonal(array, nome, simbolo): # verificação apenas na diagonal
+    simb = simbolo
     cont = 0 
     while True:
         contagem = 0
         for i in range(0, 3): # superior esquerdo para o inferior direito
-            if array[cont][i] != num:
+            if array[cont][i] != simb:
                 break
             else:
                 cont += 1
@@ -85,7 +85,7 @@ def verificar_diagonal(array, nome, nume): # verificação apenas na diagonal
     while True:
         contagem = 0
         for i in range(0, 3): # inferior esquerdo para o superior direito
-            if array[cont][i] != num:
+            if array[cont][i] != simb:
                 break
             else:
                 cont -= 1
@@ -94,15 +94,15 @@ def verificar_diagonal(array, nome, nume): # verificação apenas na diagonal
             return True
         break
 
-def verificar_vertical(array, nome, nume): # verificção apenas na vertical
-    num = nume
+def verificar_vertical(array, nome, simbolo): # verificção apenas na vertical
+    simb = simbolo
     geral = 0
     while True:
         conti = 0
         contagem = 0
 
         for i in range(0, 3): 
-            if array[conti][geral] != num:
+            if array[conti][geral] != simb:
                 break
             else:
                 conti += 1
@@ -114,7 +114,8 @@ def verificar_vertical(array, nome, nume): # verificção apenas na vertical
             break
         geral += 1
 
-array = np.zeros((3, 3))
+array = np.zeros((3, 3)).astype(int)
+array = array.astype(str)
 
 jogadas = []
 resto = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -134,10 +135,10 @@ while True:
         jogada_jogador()
 
     if comecar == 'Maquina':
-        c = 1
+        c = 'X'
     else:
-        c = 3
-
+        c = 'O'
+    print()
     verificacao = verificar_horizontal(array, comecar, c)
     if verificacao == True:
         print(f'{comecar} ganhou!')

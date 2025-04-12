@@ -7,15 +7,15 @@ def menu(func):
     return escolha
 
 def adicionar_funcionario():
-    cod = 0
     sair = 's'
     while sair != 'n':
-        cod += 1
+        
         func = {}
         func['Nome'] = input('Nome do funcionario: ').strip()
-        func['Cargo'] = input('Cargo do funcionario: ')
+        func['Cargo'] = input('Cargo do funcionario: ').lower()
         func['ID'] = cod
         funcionarios.append(func)
+        cod += 1
         sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
 
     print()
@@ -40,13 +40,13 @@ def listar_gerente():
     else:
         print('Gerentes cadastrados: ')
         print()
-        verificação = False
+        verificacao = False
         for funcionario in funcionarios:
-            for k, v in funcionario.items():
-                if v.lower() == 'gerente':
-                    print(f'Nome: {k} - Cargo: {v}')
-                    verificação = True
-        if verificação == False:
+            if funcionario['Cargo'] == 'gerente':
+                for k, v in funcionario.items():
+                    print(f'{k}: {v}',end=(' - '))
+                    verificacao = True
+        if verificacao == False:
             print('Nenhum gerente cadastrado!')
 
     print()
@@ -60,14 +60,14 @@ def listar_chefe():
         print()
         verificacao = False
         for funcionario in funcionarios:
-            for k, v in funcionario.items():
-                if v.lower() == 'chefe':
-                    print(f'Nome: {k} - Cargo: {v}')
+            if funcionario['Cargo'] == 'chefe':
+                for k, v in funcionario.items():
+                    print(f'{k}: {v}',end=(' - '))
                     verificacao = True
-        if verificacao == True:
+        if verificacao == False:
             print('Nenhum chefe cadastrado!')
     print()
-
+cod = 1
 funcionarios = []
 
 while True:

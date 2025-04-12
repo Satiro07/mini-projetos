@@ -7,8 +7,6 @@ def menu(func):
     return escolha
 
 def adicionar_funcionario(cod):
-
-    cod += 1
     func = {}
     func['Nome'] = input('Nome do funcionario: ').strip()
     func['Cargo'] = input('Cargo do funcionario: ').lower()
@@ -16,7 +14,7 @@ def adicionar_funcionario(cod):
     return funcionarios.append(func)
     
 
-
+ 
 def exibir_funcionarios():
     if not funcionarios:
         print()
@@ -66,7 +64,7 @@ def listar_chefe():
     print()
 
 funcionarios = []
-cod = 0
+cod = 1
 while True:
     escolha = menu(funcionarios)
     if escolha == 1:

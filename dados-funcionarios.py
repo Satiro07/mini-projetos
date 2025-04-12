@@ -19,6 +19,7 @@ def adicionar_funcionario():
 
 def exibir_funcionarios():
     if not funcionarios:
+        print()
         print('Nenhum funcionário adicionado!')
     else:
         print('Funcionarios cadastrados:')
@@ -30,6 +31,7 @@ def exibir_funcionarios():
         
 def listar_gerente():
     if not funcionarios:
+        print()
         print('Nenhum funcionário adicionado!')
     else:
         print('Gerentes cadastrados: ')
@@ -47,6 +49,7 @@ def listar_gerente():
 
 def listar_chefe():
     if not funcionarios:
+        print()
         print('Nenhum funcionário adicionado!')
     else:
         print('Chefes cadastrados:')

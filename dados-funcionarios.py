@@ -45,7 +45,6 @@ while True:
     escolha = int(input('Escolha uma opção: '))
     if escolha == 1:
         adicionar_funcionario()
-        print(funcionarios)
     elif escolha == 2:
         exibir_funcionarios()
     elif escolha == 3:

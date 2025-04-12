@@ -75,4 +75,6 @@ while True:
         listar_gerente()
     elif escolha == 4:
         listar_chefe()
+    else:
+        print('Erro! Escolha uma opção válida!')
 

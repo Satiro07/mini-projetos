@@ -21,7 +21,7 @@ def exibir_funcionarios():
     print()
     for funcionario in funcionarios:
         for k, v in funcionario.items():
-            print(f"{'Nome'}: {k} - {'Cargo':>10}: {v}")
+            print(f"{'Nome'}: {k} - {'Cargo'}: {v}")
     print()
         
 def listar_gerente():

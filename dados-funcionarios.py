@@ -7,14 +7,17 @@ def menu(func):
     return escolha
 
 def adicionar_funcionario():
+    cod = 0
     sair = 's'
     while sair != 'n':
+        cod += 1
         func = {}
         nome = input('Nome do funcionario: ').strip()
-
         func[nome] = input('Cargo do funcionario: ')
+        func[nome] = cod
         funcionarios.append(func)
         sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
+        print(func)
     print()
 
 def exibir_funcionarios():
@@ -63,6 +66,7 @@ def listar_chefe():
         if verificacao == True:
             print('Nenhum chefe cadastrado!')
     print()
+
 funcionarios = []
 
 while True:

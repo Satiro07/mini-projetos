@@ -28,12 +28,17 @@ def exibir_funcionarios():
     print()
         
 def listar_gerente():
-    print('Gerentes cadastrados: ')
-    print()
-    for funcionario in funcionarios:
-        for k, v in funcionario.items():
-            if v.lower() == 'gerente':
-                print(f'Nome: {k} - Cargo: {v}')
+    if not funcionarios:
+        print('Nenhum funcionário adicionado!')
+    else:
+        print('Gerentes cadastrados: ')
+        print()
+        for funcionario in funcionarios:
+            for k, v in funcionario.items():
+                if v.lower() == 'gerente':
+                    print(f'Nome: {k} - Cargo: {v}')
+                else:
+                    print('Nenhum gerente cadastrado!')
     print()
 
 def listar_chefe():

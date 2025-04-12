@@ -5,7 +5,6 @@ def menu():
     print('4. Buscar chefes')
 
 def adicionar_funcionario():
-    
     sair = 's'
     while sair != 'n':
         func = {}

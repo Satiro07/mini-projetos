@@ -5,16 +5,18 @@ def menu():
     print('4. Buscar chefes')
 
 def adicionar_funcionario():
-    func = {}
+    
     sair = 's'
     while sair != 'n':
-        func['nome'] = input('Nome do funcionario: ')
-        func['cargo'] = input('Cargo do funcionario: ')
-        funcionarios.append([func])
+        func = {}
+        nome = input('Nome do funcionario: ')
+        cargo = input('Cargo do funcionario: ')
+        func[nome] = func[cargo]
+        funcionarios.append(func)
         sair = input('Deseja adicionar outro funcionario? [s/n]').lower()
 
 def exibir_funcionarios():
-    for funcionario in funcionarios[0]:
+    for funcionario in funcionarios:
         for k, v in funcionario.items():
             print(f'{k} = {v}')
 funcionarios = []

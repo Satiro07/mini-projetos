@@ -12,9 +12,9 @@ def adicionar_funcionario():
     while sair != 'n':
         cod += 1
         func = {}
-        nome = input('Nome do funcionario: ').strip()
-        func[nome] = input('Cargo do funcionario: ')
-        func[nome] = cod
+        func['Nome'] = input('Nome do funcionario: ').strip()
+        func['Cargo'] = input('Cargo do funcionario: ')
+        func['ID'] = cod
         funcionarios.append(func)
         sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
         print(func)
@@ -29,7 +29,8 @@ def exibir_funcionarios():
         print()
         for funcionario in funcionarios:
             for k, v in funcionario.items():
-                print(f'Nome: {k} - Cargo: {v}')
+                print(f'{k}: {v}',end=(' '))
+            print()
     print()
         
 def listar_gerente():

@@ -17,7 +17,7 @@ def adicionar_funcionario():
         func['ID'] = cod
         funcionarios.append(func)
         sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
-        print(func)
+
     print()
 
 def exibir_funcionarios():
@@ -30,7 +30,6 @@ def exibir_funcionarios():
         for funcionario in funcionarios:
             for k, v in funcionario.items():
                 print(f'{k}: {v}',end=(' - '))
-
             print()
     print()
         

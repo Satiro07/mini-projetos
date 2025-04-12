@@ -17,6 +17,12 @@ def exibir_funcionarios():
     for funcionario in funcionarios:
         for k, v in funcionario.items():
             print(f'nome: {k} - cargo: {v}')
+        
+def buscar_gerente():
+    for funcionario in funcionarios:
+        for k, v in funcionario.items():
+            if v.lower() == 'chefe':
+                print(f'nome: {k} - cargo: {v}')
 funcionarios = []
 
 
@@ -28,3 +34,6 @@ while True:
         print(funcionarios)
     elif escolha == 2:
         exibir_funcionarios()
+    elif escolha == 3:
+        buscar_gerente()
+

@@ -10,15 +10,14 @@ def adicionar_funcionario():
     while sair != 'n':
         func = {}
         nome = input('Nome do funcionario: ')
-        cargo = input('Cargo do funcionario: ')
-        func[nome] = func[cargo]
+        func[nome] = input('Cargo do funcionario: ')
         funcionarios.append(func)
-        sair = input('Deseja adicionar outro funcionario? [s/n]').lower()
+        sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
 
 def exibir_funcionarios():
     for funcionario in funcionarios:
         for k, v in funcionario.items():
-            print(f'{k} = {v}')
+            print(f'nome: {k} - cargo: {v}')
 funcionarios = []
 
 

@@ -6,19 +6,16 @@ def menu(func):
     escolha = int(input('Escolha uma opção: '))
     return escolha
 
-def adicionar_funcionario():
-    sair = 's'
-    while sair != 'n':
-        
-        func = {}
-        func['Nome'] = input('Nome do funcionario: ').strip()
-        func['Cargo'] = input('Cargo do funcionario: ').lower()
-        func['ID'] = cod
-        funcionarios.append(func)
-        cod += 1
-        sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
+def adicionar_funcionario(cod):
 
-    print()
+    cod += 1
+    func = {}
+    func['Nome'] = input('Nome do funcionario: ').strip()
+    func['Cargo'] = input('Cargo do funcionario: ').lower()
+    func['ID'] = cod
+    return funcionarios.append(func)
+    
+
 
 def exibir_funcionarios():
     if not funcionarios:
@@ -67,13 +64,17 @@ def listar_chefe():
         if verificacao == False:
             print('Nenhum chefe cadastrado!')
     print()
-cod = 1
-funcionarios = []
 
+funcionarios = []
+cod = 0
 while True:
     escolha = menu(funcionarios)
     if escolha == 1:
-        adicionar_funcionario()
+        sair = 's'
+        while sair != 'n':
+            opcao = adicionar_funcionario(cod)
+            cod += 1
+            sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
     elif escolha == 2:
         exibir_funcionarios()
     elif escolha == 3:
@@ -82,4 +83,5 @@ while True:
         listar_chefe()
     else:
         print('Erro! Escolha uma opção válida!')
+    print(funcionarios)
 

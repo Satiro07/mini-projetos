@@ -17,11 +17,14 @@ def adicionar_funcionario():
         sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
 
 def exibir_funcionarios():
-    print('Funcionarios cadastrados:')
-    print()
-    for funcionario in funcionarios:
-        for k, v in funcionario.items():
-            print(f"{'Nome'}: {k} - {'Cargo'}: {v}")
+    if not funcionarios:
+        print('Nenhum funcionário adicionado!')
+    else:
+        print('Funcionarios cadastrados:')
+        print()
+        for funcionario in funcionarios:
+            for k, v in funcionario.items():
+                print(f"{'Nome'}: {k} - {'Cargo'}: {v}")
     print()
         
 def listar_gerente():

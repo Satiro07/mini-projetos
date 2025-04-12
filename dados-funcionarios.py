@@ -1,8 +1,8 @@
 def menu():
     print('1. Adicionar funcionario')
     print('2. Exibir todos os funcionarios')
-    print('3. Buscar gerentes')
-    print('4. Buscar chefes')
+    print('3. listar gerentes')
+    print('4. listar chefes')
 
 def adicionar_funcionario():
     sair = 's'
@@ -21,7 +21,7 @@ def exibir_funcionarios():
             print(f'Nome: {k} - Cargo: {v}')
     print()
         
-def buscar_gerente():
+def listar_gerente():
     print('Gerentes cadastrados: ')
     print()
     for funcionario in funcionarios:
@@ -30,11 +30,14 @@ def buscar_gerente():
                 print(f'Nome: {k} - Cargo: {v}')
     print()
 
-def buscar_chefe():
+def listar_chefe():
+    print('Chefes cadastrados:')
+    print()
     for funcionario in funcionarios:
         for k, v in funcionario.items():
             if v.lower() == 'chefe':
                 print(f'Nome: {k} - Cargo: {v}')
+    print()
 funcionarios = []
 
 while True:
@@ -46,7 +49,7 @@ while True:
     elif escolha == 2:
         exibir_funcionarios()
     elif escolha == 3:
-        buscar_gerente()
+        listar_gerente()
     elif escolha == 4:
-        buscar_chefe()
+        listar_chefe()
 

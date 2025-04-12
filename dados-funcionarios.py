@@ -29,7 +29,8 @@ def exibir_funcionarios():
         print()
         for funcionario in funcionarios:
             for k, v in funcionario.items():
-                print(f'{k}: {v}',end=(' '))
+                print(f'{k}: {v}',end=(' - '))
+
             print()
     print()
         

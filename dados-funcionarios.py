@@ -34,12 +34,15 @@ def listar_gerente():
     else:
         print('Gerentes cadastrados: ')
         print()
+        verificação = False
         for funcionario in funcionarios:
             for k, v in funcionario.items():
                 if v.lower() == 'gerente':
                     print(f'Nome: {k} - Cargo: {v}')
-                else:
-                    print('Nenhum gerente cadastrado!')
+                    verificação = True
+        if verificação == False:
+            print('Nenhum gerente cadastrado!')
+
     print()
 
 def listar_chefe():

@@ -14,15 +14,21 @@ def adicionar_funcionario():
         sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
 
 def exibir_funcionarios():
+    print('Funcionarios cadastrados:')
+    print()
     for funcionario in funcionarios:
         for k, v in funcionario.items():
             print(f'nome: {k} - cargo: {v}')
+    print()
         
 def buscar_gerente():
+    print('Gerentes cadastrados: ')
+    print()
     for funcionario in funcionarios:
         for k, v in funcionario.items():
-            if v.lower() == 'chefe':
+            if v.lower() == 'gerente':
                 print(f'nome: {k} - cargo: {v}')
+    print()
 funcionarios = []
 
 

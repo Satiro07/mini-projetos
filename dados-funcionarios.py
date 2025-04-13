@@ -1,3 +1,6 @@
+from datetime import datetime
+data_hora = datetime.now()
+data_admissao = data_hora.strftime("%d/%m/%Y, %H:%M:%S")
 
 def menu(func):
     print('-'*40)
@@ -6,6 +9,7 @@ def menu(func):
     print('3. listar gerentes')
     print('4. listar chefes')
     print('5. Remover funcionário')
+    print('6. Editar funcionário')
     escolha = int(input('Escolha uma opção: '))
     return escolha
 

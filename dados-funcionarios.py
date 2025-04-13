@@ -27,9 +27,9 @@ def exibir_funcionarios():
         print()
         print('Nenhum funcionário adicionado!')
     else:
+        print('-'*40)
         print('Funcionarios cadastrados:')
         print()
-        print('-'*40)
         for funcionario in funcionarios:
             for k, v in funcionario.items():
                 print(f'{k}: {v}')
@@ -60,10 +60,10 @@ def listar_chefe():
         print()
         print('Nenhum funcionário adicionado!')
     else:
+        print('-'*40)
         print('Chefes cadastrados:')
         print()
         verificacao = False
-        print('-'*40)
         for funcionario in funcionarios:
             if funcionario['Cargo'] == 'chefe':
                 for k, v in funcionario.items():

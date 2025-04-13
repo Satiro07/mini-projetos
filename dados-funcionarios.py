@@ -21,8 +21,6 @@ def adicionar_funcionario(cod):
     dia = input('Dia em que nasceu: ')
     mes = input('Mês em que nasceu: [01, 02...] ')
     ano = input('Ano em que nasceu: [2000, 2001...] ')
-    
-
 
     while func['Nome'] == '' or func['Cargo'] == '' or dia == '' or mes == '' or ano == '':
         print('Nenhum campo pode ficar vazio!')
@@ -130,6 +128,17 @@ def remover_funcionario():
                             print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
         if verificacao == False:
             print(f'Nenhum funcionário com o ID: {coder}')
+
+def menu_edicao():
+    print('O que deseja editar? ')
+    print('1. Nome')
+    print('2. Cargo')
+def editar_informações():
+    if not funcionarios:
+        print()
+        print('Nenhum funcionário adicionado!')
+    else:
+        print('-'*40)
             
 funcionarios = []
 cod = 1

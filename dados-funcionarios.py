@@ -65,6 +65,7 @@ def listar_chefe():
             print('Nenhum chefe cadastrado!')
     print()
 
+def re
 funcionarios = []
 cod = 1
 while True:
@@ -81,6 +82,8 @@ while True:
         listar_gerente()
     elif escolha == 4:
         listar_chefe()
+    elif escolha == 5:
+
     else:
         print('Erro! Escolha uma opção válida!')
 

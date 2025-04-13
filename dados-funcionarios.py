@@ -10,6 +10,8 @@ def adicionar_funcionario(cod):
     func = {}
     func['Nome'] = input('Nome do funcionario: ').strip()
     func['Cargo'] = input('Cargo do funcionario: ').lower()
+    while func['Nome'] == '' or func['Cargo'] == '':
+        print('Nenhum campo pode ficar vazio!')
     func['ID'] = cod
     return funcionarios.append(func)
 

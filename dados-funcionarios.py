@@ -198,7 +198,7 @@ while True:
     elif escolha == 4:
         listar_chefe()
     elif escolha == 5:
-        remover_funcionario()
+        remover_funcionario(senha)
     # elif escolha == 6:
     #     editar_informações()
     else:

@@ -25,6 +25,7 @@ def exibir_funcionarios():
     else:
         print('Funcionarios cadastrados:')
         print()
+        print('-'*40)
         for funcionario in funcionarios:
             for k, v in funcionario.items():
                 print(f'{k}: {v}')
@@ -39,6 +40,7 @@ def listar_gerente():
         print('Gerentes cadastrados: ')
         print()
         verificacao = False
+        print('-'*40)
         for funcionario in funcionarios:
             if funcionario['Cargo'] == 'gerente':
                 for k, v in funcionario.items():
@@ -57,6 +59,7 @@ def listar_chefe():
         print('Chefes cadastrados:')
         print()
         verificacao = False
+        print('-'*40)
         for funcionario in funcionarios:
             if funcionario['Cargo'] == 'chefe':
                 for k, v in funcionario.items():
@@ -68,10 +71,12 @@ def listar_chefe():
     print()
 
 def remover_funcionario():
+    senha = 1234
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')
     else:
+        print('-'*40)
         for funcionario in funcionarios:
             for k, v in funcionario.items():
                 print(f'{k}: {v}')
@@ -82,11 +87,13 @@ def remover_funcionario():
         for funcionario in funcionarios:
             if coder == funcionario['ID']:
                 funcionarios.remove(funcionario)
+                print(f"Funcionario {funcionario['Nome']}, removido com sucesso!")
             
 
     
 funcionarios = []
 cod = 1
+
 while True:
     escolha = menu(funcionarios)
     if escolha == 1:

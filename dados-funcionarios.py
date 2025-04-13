@@ -1,6 +1,6 @@
 from datetime import datetime
 data_hora = datetime.now()
-data_admissao = data_hora.strftime("%d/%m/%Y, %H:%M:%S")
+data_registro = data_hora.strftime("%d/%m/%Y, Horário: %H:%M:%S")
 
 def menu(func):
     print('-'*40)
@@ -25,6 +25,7 @@ def adicionar_funcionario(cod):
         if func['Cargo'] == '':
             func['Cargo'] = input('Cargo do funcionario: ').lower()
     func['ID'] = cod
+    func['Data de Registro'] = data_registro
     return funcionarios.append(func)
 
 def exibir_funcionarios():

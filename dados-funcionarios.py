@@ -37,6 +37,14 @@ def adicionar_funcionario(cod):
     func['ID'] = cod
     func['Data de Registro'] = data_registro
     func['Data de nascimento'] = f'{dia}/' + f'{mes}/' + f'{ano}'
+    print()
+    print('-'*40)
+    print()
+    print('Funcionário adicionado com sucesso!')
+    print()
+    for k, v in func.items():
+        print(f'{k}: {v}')
+    print('-'*40)
     return funcionarios.append(func)
 
 def exibir_funcionarios():

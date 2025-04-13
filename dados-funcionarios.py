@@ -84,10 +84,22 @@ def remover_funcionario():
         print()
         print('Remova pelo ID!')
         coder = int(input('Digite o ID do funcionário que deseja remover: '))
+        verificacao = False
         for funcionario in funcionarios:
             if coder == funcionario['ID']:
-                funcionarios.remove(funcionario)
-                print(f"Funcionario {funcionario['Nome']}, removido com sucesso!")
+                verificacao = True
+                senha_verificação = int(input('Digite a senha para remover funcionário: '))
+                tentativas = 0
+                while senha_verificação != senha or tentativas <= 3:
+                    if senha == senha_verificação:
+                        funcionarios.remove(funcionario)
+                        print(f"Funcionario(a) {funcionario['Nome']}, removido com sucesso!")
+                    else:
+                        print('Senha incorreta!')
+                    senha_verificação = int(input('Digite a senha para remover funcionário: '))
+                    tentativas += 1
+        if verificacao == False:
+            print(f'Nenhum funcionário com o ID: {coder}')
             
 
     

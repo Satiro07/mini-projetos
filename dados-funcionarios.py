@@ -91,8 +91,7 @@ def listar_chefe():
             print('Nenhum chefe cadastrado!')
     print()
 
-def remover_funcionario():
-    senha = 1234
+def remover_funcionario(senha):
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')
@@ -114,7 +113,7 @@ def remover_funcionario():
                 if senha == senha_verificação:
                     funcionarios.remove(funcionario)
                     print()
-                    print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
+                    return f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!"
                 else:
                     while senha_verificação != senha and tentativas != 3:
                         print('Senha incorreta!')
@@ -125,9 +124,9 @@ def remover_funcionario():
                         if senha == senha_verificação:
                             funcionarios.remove(funcionario)
                             print()
-                            print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
+                            return f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!"
         if verificacao == False:
-            print(f'Nenhum funcionário com o ID: {coder}')
+            return f'Nenhum funcionário com o ID: {coder}'
 
 def menu_edicao():
     print('O que deseja editar? ')
@@ -136,23 +135,53 @@ def menu_edicao():
     print('3. Data de nascimento')
     escolha_opcao = int(input('Escolha uma opção: '))
     return escolha_opcao
-def editar_informações():
-    if not funcionarios:
-        print()
-        print('Nenhum funcionário adicionado!')
-    else:
-        print('-'*40)
-        escolha_opcao = 0
-        while escolha_opcao > 3:
-            escolha_opcao = menu_edicao(funcionarios)
-        if escolha_opcao == 1:
-        elif escolha_opcao == 2:
-        elif escolha_opcao == 3:
+
+def editar_nome_cargo_data_nasc(opcao):
+    senha = 1234
+    coder = int(input('Digite o ID do funcionário que deseja remover: '))
+    verificacao = False
+    for funcionario in funcionarios:
+        if coder == funcionario['ID']:
+            verificacao = True
+            senha_verificação = int(input('Digite a senha para remover funcionário: '))
+            tentativas = 0
+    #         if senha == senha_verificação:
+    #             funcionarios.remove(funcionario)
+    #             print()
+    #             print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
+    #         else:
+    #             while senha_verificação != senha and tentativas != 3:
+    #                 print('Senha incorreta!')
+    #                 senha_verificação = int(input('Digite a senha para remover funcionário: '))
+    #                 tentativas += 1
+    #                 if tentativas == 3:
+    #                     print('Limite de tentativas atingida')
+    #                 if senha == senha_verificação:
+    #                     funcionarios.remove(funcionario)
+    #                     print()
+    #                     print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
+    # if verificacao == False:
+    #     print(f'Nenhum funcionário com o ID: {coder}')
+
+# def editar_informações():
+#     if not funcionarios:
+#         print()
+#         print('Nenhum funcionário adicionado!')
+#     else:
+#         print('-'*40)
+#         escolha_opcao = 0
+#         while escolha_opcao > 3:
+#             escolha_opcao = menu_edicao(funcionarios)
+#         if escolha_opcao == 1:
+#             editar = editar_nome_cargo_data_nasc(escolha_opcao)
+#         elif escolha_opcao == 2:
+#         elif escolha_opcao == 3:
         
 
             
 funcionarios = []
 cod = 1
+senha = 1234
 
 while True:
     escolha = menu(funcionarios)
@@ -169,9 +198,9 @@ while True:
     elif escolha == 4:
         listar_chefe()
     elif escolha == 5:
-        remover_funcionario()
-    elif escolha == 6:
-        editar_informações()
+        remover_funcionario(senha)
+    # elif escolha == 6:
+    #     editar_informações()
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')

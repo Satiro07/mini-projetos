@@ -135,12 +135,21 @@ def menu_edicao():
     print('2. Cargo')
     print('3. Data de nascimento')
     escolha_opcao = int(input('Escolha uma opção: '))
+    return escolha_opcao
 def editar_informações():
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')
     else:
         print('-'*40)
+        escolha_opcao = 0
+        while escolha_opcao > 3:
+            escolha_opcao = menu_edicao(funcionarios)
+        if escolha_opcao == 1:
+        elif escolha_opcao == 2:
+        elif escolha_opcao == 3:
+        
+
             
 funcionarios = []
 cod = 1
@@ -161,6 +170,8 @@ while True:
         listar_chefe()
     elif escolha == 5:
         remover_funcionario()
+    elif escolha == 6:
+        editar_informações()
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')

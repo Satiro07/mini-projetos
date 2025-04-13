@@ -82,5 +82,5 @@ while True:
         listar_chefe()
     else:
         print('Erro! Escolha uma opção válida!')
-    print(funcionarios)
+
 

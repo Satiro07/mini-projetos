@@ -18,14 +18,27 @@ def adicionar_funcionario(cod):
     print('-'*40)
     func['Nome'] = input('Nome do funcionario: ').strip()
     func['Cargo'] = input('Cargo do funcionario: ').lower()
-    while func['Nome'] == '' or func['Cargo'] == '':
+    dia = input('Dia em que nasceu: ')
+    mes = input('Mês em que nasceu: [01, 02...] ')
+    ano = input('Ano em que nasceu: [2000, 2001...] ')
+    
+
+
+    while func['Nome'] == '' or func['Cargo'] == '' or dia == '' or mes == '' or ano == '':
         print('Nenhum campo pode ficar vazio!')
         if func['Nome'] == '':
             func['Nome'] = input('Nome do funcionario: ').strip()
         if func['Cargo'] == '':
             func['Cargo'] = input('Cargo do funcionario: ').lower()
+        if dia  == '':
+            dia = input('Dia em que nasceu: ')
+        if mes == '':
+            mes = input('Mês em que nasceu: [01, 02...] ')
+        if ano == '':
+            ano = input('Ano em que nasceu: [2000, 2001...] ')
     func['ID'] = cod
     func['Data de Registro'] = data_registro
+    func['Data de nascimento'] = f'{dia}/' + f'{mes}/' + f'{ano}'
     return funcionarios.append(func)
 
 def exibir_funcionarios():

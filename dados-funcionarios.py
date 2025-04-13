@@ -78,7 +78,7 @@ def remover_funcionario():
         coder = int(input('Digite o ID do funcionário que deseja remover: '))
         for funcionario in funcionarios:
             if coder == funcionario['ID']:
-                del funcionario['ID']
+                del funcionario
 
     
 funcionarios = []

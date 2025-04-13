@@ -42,8 +42,9 @@ def listar_gerente():
         for funcionario in funcionarios:
             if funcionario['Cargo'] == 'gerente':
                 for k, v in funcionario.items():
-                    print(f'{k}: {v}',end=(' - '))
+                    print(f'{k}: {v}')
                     verificacao = True
+                print('-'*40)
         if verificacao == False:
             print('Nenhum gerente cadastrado!')
     print()
@@ -59,8 +60,9 @@ def listar_chefe():
         for funcionario in funcionarios:
             if funcionario['Cargo'] == 'chefe':
                 for k, v in funcionario.items():
-                    print(f'{k}: {v}',end=(' - '))
+                    print(f'{k}: {v}')
                     verificacao = True
+                print('-'*40)
         if verificacao == False:
             print('Nenhum chefe cadastrado!')
     print()
@@ -72,8 +74,8 @@ def remover_funcionario():
     else:
         for funcionario in funcionarios:
             for k, v in funcionario.items():
-                print(f'{k}: {v}',end=(' - '))
-            print()
+                print(f'{k}: {v}')
+            print('-'*40)
         print()
         print('Remova pelo ID!')
         coder = int(input('Digite o ID do funcionário que deseja remover: '))

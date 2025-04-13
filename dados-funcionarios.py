@@ -92,18 +92,17 @@ def remover_funcionario():
                 tentativas = 0
                 if senha == senha_verificação:
                     funcionarios.remove(funcionario)
-                    print(f"Funcionario(a) {funcionario['Nome']}, removido com sucesso!")
+                    print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
                 else:
-                    while senha_verificação != senha:
+                    while senha_verificação != senha and tentativas != 3:
                         print('Senha incorreta!')
                         senha_verificação = int(input('Digite a senha para remover funcionário: '))
                         tentativas += 1
                         if tentativas == 3:
                             print('Limite de tentativas atingida')
-                            break
                         if senha == senha_verificação:
                             funcionarios.remove(funcionario)
-                            print(f"Funcionario(a) {funcionario['Nome']}, removido com sucesso!")
+                            print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
         if verificacao == False:
             print(f'Nenhum funcionário com o ID: {coder}')
             

@@ -66,9 +66,13 @@ def listar_chefe():
     print()
 
 def remover_funcionario():
-    for funcionario in funcionarios:
-        for k, v in funcionario.items():
-            print(f'{k}: {v}',end=(' - '))
+    if not funcionarios:
+        print()
+        print('Nenhum funcionário adicionado!')
+    else:
+        for funcionario in funcionarios:
+            for k, v in funcionario.items():
+                print(f'{k}: {v}',end=(' - '))
     
 funcionarios = []
 cod = 1

@@ -113,7 +113,7 @@ def remover_funcionario(senha):
                 if senha == senha_verificação:
                     funcionarios.remove(funcionario)
                     print()
-                    return f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!"
+                    print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
                 else:
                     while senha_verificação != senha and tentativas != 3:
                         print('Senha incorreta!')
@@ -124,9 +124,9 @@ def remover_funcionario(senha):
                         if senha == senha_verificação:
                             funcionarios.remove(funcionario)
                             print()
-                            return f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!"
+                            print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
         if verificacao == False:
-            return f'Nenhum funcionário com o ID: {coder}'
+            print(f'Nenhum funcionário com o ID: {coder}')
 
 def menu_edicao():
     print('O que deseja editar? ')
@@ -198,7 +198,7 @@ while True:
     elif escolha == 4:
         listar_chefe()
     elif escolha == 5:
-        remover_funcionario(senha)
+        remover_funcionario()
     # elif escolha == 6:
     #     editar_informações()
     else:

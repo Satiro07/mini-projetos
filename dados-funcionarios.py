@@ -1,4 +1,5 @@
 def menu(func):
+    print('-'*40)
     print('1. Adicionar funcionario')
     print('2. Exibir todos os funcionarios')
     print('3. listar gerentes')
@@ -9,6 +10,7 @@ def menu(func):
 
 def adicionar_funcionario(cod):
     func = {}
+    print('-'*40)
     func['Nome'] = input('Nome do funcionario: ').strip()
     func['Cargo'] = input('Cargo do funcionario: ').lower()
     while func['Nome'] == '' or func['Cargo'] == '':
@@ -128,6 +130,7 @@ while True:
     elif escolha == 5:
         remover_funcionario()
     else:
+        print('-'*40)
         print('Erro! Escolha uma opção válida!')
 
 

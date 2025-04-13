@@ -133,6 +133,8 @@ def menu_edicao():
     print('O que deseja editar? ')
     print('1. Nome')
     print('2. Cargo')
+    print('3. Data de nascimento')
+    escolha_opcao = int(input('Escolha uma opção: '))
 def editar_informações():
     if not funcionarios:
         print()

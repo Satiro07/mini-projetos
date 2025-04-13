@@ -1,3 +1,4 @@
+
 def menu(func):
     print('-'*40)
     print('1. Adicionar funcionario')
@@ -134,5 +135,3 @@ while True:
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')
-
-

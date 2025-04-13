@@ -3,6 +3,7 @@ def menu(func):
     print('2. Exibir todos os funcionarios')
     print('3. listar gerentes')
     print('4. listar chefes')
+    print('5. Remover funcionário')
     escolha = int(input('Escolha uma opção: '))
     return escolha
 

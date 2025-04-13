@@ -15,8 +15,10 @@ def adicionar_funcionario(cod):
     func['Cargo'] = input('Cargo do funcionario: ').lower()
     while func['Nome'] == '' or func['Cargo'] == '':
         print('Nenhum campo pode ficar vazio!')
-        func['Nome'] = input('Nome do funcionario: ').strip()
-        func['Cargo'] = input('Cargo do funcionario: ').lower()
+        if func['Nome'] == '':
+            func['Nome'] = input('Nome do funcionario: ').strip()
+        if func['Cargo'] == '':
+            func['Cargo'] = input('Cargo do funcionario: ').lower()
     func['ID'] = cod
     return funcionarios.append(func)
 
@@ -94,6 +96,7 @@ def remover_funcionario():
                 tentativas = 0
                 if senha == senha_verificação:
                     funcionarios.remove(funcionario)
+                    print()
                     print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
                 else:
                     while senha_verificação != senha and tentativas != 3:
@@ -104,12 +107,11 @@ def remover_funcionario():
                             print('Limite de tentativas atingida')
                         if senha == senha_verificação:
                             funcionarios.remove(funcionario)
+                            print()
                             print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
         if verificacao == False:
             print(f'Nenhum funcionário com o ID: {coder}')
             
-
-    
 funcionarios = []
 cod = 1
 

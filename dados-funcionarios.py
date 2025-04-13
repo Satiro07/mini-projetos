@@ -65,7 +65,8 @@ def listar_chefe():
             print('Nenhum chefe cadastrado!')
     print()
 
-def re
+def remover_funcionario():
+    
 funcionarios = []
 cod = 1
 while True:

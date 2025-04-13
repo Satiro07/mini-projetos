@@ -66,6 +66,9 @@ def listar_chefe():
     print()
 
 def remover_funcionario():
+    for funcionario in funcionarios:
+        for k, v in funcionario.items():
+            print(f'{k}: {v}',end=(' - '))
     
 funcionarios = []
 cod = 1
@@ -84,7 +87,7 @@ while True:
     elif escolha == 4:
         listar_chefe()
     elif escolha == 5:
-
+        remover_funcionario()
     else:
         print('Erro! Escolha uma opção válida!')
 

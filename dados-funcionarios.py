@@ -12,9 +12,7 @@ def adicionar_funcionario(cod):
     func['Cargo'] = input('Cargo do funcionario: ').lower()
     func['ID'] = cod
     return funcionarios.append(func)
-    
 
- 
 def exibir_funcionarios():
     if not funcionarios:
         print()
@@ -43,7 +41,6 @@ def listar_gerente():
                     verificacao = True
         if verificacao == False:
             print('Nenhum gerente cadastrado!')
-
     print()
 
 def listar_chefe():

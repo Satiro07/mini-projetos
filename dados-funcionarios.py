@@ -170,11 +170,14 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                         if tentativas == 3:
                             print('Limite de tentativas atingida')
                         if senha == senha_verificação:
-                            funcionarios.remove(funcionario)
+                            novo_nome = input('Nome do funcionário atualizado: ')
+                            funcionario['Nome'] = novo_nome
                             print()
-                            print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
-    # if verificacao == False:
-    #     print(f'Nenhum funcionário com o ID: {coder}')
+                            print('Alteração feita com sucesso!')
+                            print()
+                            print(f'{nome_antigo} ---> {novo_nome}')
+    if verificacao == False:
+        print(f'Nenhum funcionário com o ID: {coder}')
 
 def editar_informações():
     if not funcionarios:
@@ -187,8 +190,8 @@ def editar_informações():
             escolha_opcao = menu_edicao(funcionarios)
         if escolha_opcao == 1:
             editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
-        elif escolha_opcao == 2:
-        elif escolha_opcao == 3:
+        # elif escolha_opcao == 2:
+        # elif escolha_opcao == 3:
         
 
             

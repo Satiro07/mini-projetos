@@ -64,7 +64,7 @@ def adicionar_funcionario(cod): # adicionar funcionarios
     print('-'*40)
     return funcionarios.append(func)
 
-def exibir_funcionarios():
+def exibir_funcionarios(): # mostrar funcionarios 
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')

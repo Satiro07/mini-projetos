@@ -112,7 +112,7 @@ def remover_funcionario(senha):
         print()
         print('Remova pelo ID!')
         coder = 0
-        while coder not in funcionario['ID']:
+        while coder != funcionario['ID']:
             coder = int(input('Digite o ID do funcionário que deseja remover: '))
             verificacao = False
             for funcionario in funcionarios:

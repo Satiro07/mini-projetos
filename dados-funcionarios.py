@@ -38,14 +38,18 @@ def adicionar_funcionario(cod):
             if mes == '':
                 continue
             mes = int(mes)
-            while True:
-                print('Mês inválido!')
-                mes = input('Mês em que nasceu: [01, 02...] ')
-                if mes == '':
-                    continue
-                else:
-                    if int(mes) > 0 and int(mes) <= 12:
-                        break
+            if mes > 0 and mes <= 12:
+                break
+            else:
+                while True:
+                    print('Mês inválido!')
+                    mes = input('Mês em que nasceu: [01, 02...] ')
+                    if mes == '':
+                        continue
+                    else:
+                        mes = int(mes)
+                        if mes > 0 and mes <= 12:
+                            break
                 
         if ano == '':
             ano = input('Ano em que nasceu: [2000, 2001...] ')

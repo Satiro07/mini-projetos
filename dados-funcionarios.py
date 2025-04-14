@@ -60,7 +60,6 @@ def exibir_funcionarios():
             for k, v in funcionario.items():
                 print(f'{k}: {v}')
             print('-'*40)
-    print()
         
 def listar_gerente():
     if not funcionarios:
@@ -79,7 +78,7 @@ def listar_gerente():
                 print('-'*40)
         if verificacao == False:
             print('Nenhum gerente cadastrado!')
-    print()
+
 
 def listar_chefe():
     if not funcionarios:
@@ -98,7 +97,7 @@ def listar_chefe():
                 print('-'*40)
         if verificacao == False:
             print('Nenhum chefe cadastrado!')
-    print()
+
 
 def remover_funcionario(senha):
     if not funcionarios:

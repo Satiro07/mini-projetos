@@ -13,7 +13,7 @@ def menu(func):
     print('5. Remover funcionário')
     print('6. Editar funcionário')
     print('7. Sair do programa')
-    escolha = int(input('Escolha uma opção: '))
+    escolha = input('Escolha uma opção: ')
     return escolha
 
 def adicionar_funcionario(cod):
@@ -40,9 +40,7 @@ def adicionar_funcionario(cod):
     func['ID'] = cod
     func['Data de Registro'] = data_registro
     func['Data de nascimento'] = f'{dia}/' + f'{mes}/' + f'{ano}'
-    print()
     print('-'*40)
-    print()
     print('Funcionário adicionado com sucesso!')
     print()
     for k, v in func.items():
@@ -238,23 +236,23 @@ senha = 1234
 
 while True:
     escolha = menu(funcionarios)
-    if escolha == 1:
+    if escolha == '1':
         sair = 's'
         while sair != 'n':
             opcao = adicionar_funcionario(cod)
             cod += 1
             sair = input('Deseja adicionar outro funcionario? [s/n] ').lower()
-    elif escolha == 2:
+    elif escolha == '2':
         exibir_funcionarios()
-    elif escolha == 3:
+    elif escolha == '3':
         listar_gerente()
-    elif escolha == 4:
+    elif escolha == '4':
         listar_chefe()
-    elif escolha == 5:
+    elif escolha == '5':
         remover_funcionario(senha)
-    elif escolha == 6:
+    elif escolha == '6':
         editar_informações()
-    elif escolha == 7:
+    elif escolha == '7':
         finalizando = 'Saindo.'
         for i in range(0, 3):
             print(finalizando)

@@ -207,7 +207,7 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                             if tentativas == 3:
                                 print('Limite de tentativas atingida')
                             if senha == senha_verificação:
-                                novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
+                                novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ').lower()
                                 funcionario['Cargo'] = novo_cargo
                                 print()
                                 print('Alteração feita com sucesso!')

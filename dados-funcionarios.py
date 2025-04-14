@@ -145,6 +145,12 @@ def menu_edicao(func):
     return escolha_opcao
 
 def editar_nome_cargo_data_nasc(opcao, senha):
+    print('-'*40)
+    for funcionario in funcionarios:
+        for k, v in funcionario.items():
+            print(f'{k}: {v}')
+        print('-'*40)
+    print()
     coder = int(input('Digite o ID do funcionário que deseja remover: '))
     verificacao = False
     for funcionario in funcionarios:
@@ -179,13 +185,13 @@ def editar_nome_cargo_data_nasc(opcao, senha):
     if verificacao == False:
         print(f'Nenhum funcionário com o ID: {coder}')
 
-def editar_informações(ff):
+def editar_informações():
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')
     else:
         print('-'*40)
-        escolha_opcao = 0
+        escolha_opcao = menu_edicao(funcionarios)
         while escolha_opcao > 3:
             escolha_opcao = menu_edicao(funcionarios)
         if escolha_opcao == 1:
@@ -216,7 +222,7 @@ while True:
     elif escolha == 5:
         remover_funcionario(senha)
     elif escolha == 6:
-        editar_informações(funcionarios)
+        editar_informações()
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')

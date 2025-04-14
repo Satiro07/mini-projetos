@@ -157,7 +157,7 @@ def remover_funcionario(senha): # remover algum funcionário
             if verificacao == False:
                 print(f'Nenhum funcionário com o ID: {coder}')
 
-def menu_edicao(func):
+def menu_edicao(func): # menu de edição
     print('O que deseja editar? ')
     print('1. Nome')
     print('2. Cargo')

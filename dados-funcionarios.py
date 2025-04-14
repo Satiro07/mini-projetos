@@ -96,7 +96,7 @@ def listar_gerente(): # mostrar apenas gerentes
             print('Nenhum gerente cadastrado!')
 
 
-def listar_chefe():
+def listar_chefe(): # mostrar apenas chefes
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')

@@ -226,7 +226,8 @@ def editar_informações():
             escolha_opcao = menu_edicao(funcionarios)
         if escolha_opcao == 1:
             editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
-        # elif escolha_opcao == 2:
+        elif escolha_opcao == 2:
+            editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
         # elif escolha_opcao == 3:
         
 

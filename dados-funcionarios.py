@@ -289,10 +289,12 @@ while True:
         editar_informações()
     elif escolha == '7':
         finalizando = 'Saindo.'
-        for i in range(0, 3):
-            print(finalizando)
-            sleep(1)
-            finalizando += '.'
+        for i in range(0, 10):
+            print(finalizando[:i])
+            sleep(0.2)
+            if i >= 6:
+                finalizando += '.'
+          
         print('Fim do programa')
         break
     else:

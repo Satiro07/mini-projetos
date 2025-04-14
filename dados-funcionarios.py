@@ -35,6 +35,18 @@ def adicionar_funcionario(cod):
             dia = input('Dia em que nasceu: ')
         if mes == '':
             mes = input('Mês em que nasceu: [01, 02...] ')
+            if mes == '':
+                continue
+            mes = int(mes)
+            while True:
+                print('Mês inválido!')
+                mes = input('Mês em que nasceu: [01, 02...] ')
+                if mes == '':
+                    continue
+                else:
+                    if int(mes) > 0 and int(mes) <= 12:
+                        break
+                
         if ano == '':
             ano = input('Ano em que nasceu: [2000, 2001...] ')
     func['ID'] = cod

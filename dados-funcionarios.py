@@ -136,7 +136,7 @@ def remover_funcionario(senha):
         if verificacao == False:
             print(f'Nenhum funcionário com o ID: {coder}')
 
-def menu_edicao():
+def menu_edicao(func):
     print('O que deseja editar? ')
     print('1. Nome')
     print('2. Cargo')
@@ -179,7 +179,7 @@ def editar_nome_cargo_data_nasc(opcao, senha):
     if verificacao == False:
         print(f'Nenhum funcionário com o ID: {coder}')
 
-def editar_informações():
+def editar_informações(ff):
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')
@@ -215,8 +215,8 @@ while True:
         listar_chefe()
     elif escolha == 5:
         remover_funcionario(senha)
-    # elif escolha == 6:
-    #     editar_informações()
+    elif escolha == 6:
+        editar_informações(funcionarios)
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')

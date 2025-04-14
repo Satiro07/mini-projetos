@@ -165,7 +165,7 @@ def menu_edicao(func): # menu de edição
     escolha_opcao = input('Escolha uma opção: ')
     return escolha_opcao
 
-def editar_nome_cargo_data_nasc(opcao, senha):
+def editar_nome_cargo_data_nasc(opcao, senha): #editar nome, cargo ou data de nascimento do funcionário 
     print('-'*40)
     for funcionario in funcionarios:
         for k, v in funcionario.items():

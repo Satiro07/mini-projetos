@@ -16,7 +16,7 @@ def menu(func): # menu de opções
     escolha = input('Escolha uma opção: ')
     return escolha
 
-def adicionar_funcionario(cod):
+def adicionar_funcionario(cod): # adicionar funcionarios
     func = {}
     print('-'*40)
     func['Nome'] = input('Nome do funcionario: ').strip()

@@ -1,3 +1,5 @@
+from time import sleep
+
 from datetime import datetime
 data_hora = datetime.now()
 data_registro = data_hora.strftime("%d/%m/%Y, Horário: %H:%M:%S")
@@ -10,6 +12,7 @@ def menu(func):
     print('4. listar chefes')
     print('5. Remover funcionário')
     print('6. Editar funcionário')
+    print('7. Sair do programa')
     escolha = int(input('Escolha uma opção: '))
     return escolha
 
@@ -223,6 +226,14 @@ while True:
         remover_funcionario(senha)
     elif escolha == 6:
         editar_informações()
+    elif escolha == 7:
+        finalizando = 'Saindo.'
+        for i in range(0, 3):
+            print(finalizando)
+            sleep(1)
+            finalizando += '.'
+        print('Fim do programa')
+        break
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')

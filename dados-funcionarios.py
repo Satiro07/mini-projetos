@@ -174,7 +174,7 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                 else:
                     while senha_verificação != senha and tentativas != 3:
                         print('Senha incorreta!')
-                        senha_verificação = int(input('Digite a senha para remover funcionário: '))
+                        senha_verificação = int(input('Digite a senha para mudar o nome do funcionário: '))
                         tentativas += 1
                         if tentativas == 3:
                             print('Limite de tentativas atingida')
@@ -185,8 +185,35 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                             print('Alteração feita com sucesso!')
                             print()
                             print(f'{nome_antigo} ---> {novo_nome}')
+            elif opcao == 2:
+                senha_verificação = int(input('Digite a senha para mudar o cargo do funcionário: '))
+                tentativas = 0
+                cargo_antigo = funcionario['Cargo']
+                if senha == senha_verificação:
+                    
+                    novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
+                    funcionario['Nome'] = novo_nome
+                    print()
+                    print('Alteração feita com sucesso!')
+                    print()
+                    print(f'{cargo_antigo} ---> {novo_cargo}')
+                else:
+                    while senha_verificação != senha and tentativas != 3:
+                        print('Senha incorreta!')
+                        senha_verificação = int(input('Digite a senha para mudar o cargo do funcionário: '))
+                        tentativas += 1
+                        if tentativas == 3:
+                            print('Limite de tentativas atingida')
+                        if senha == senha_verificação:
+                            novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
+                            print()
+                            print('Alteração feita com sucesso!')
+                            print()
+                            print(f'{cargo_antigo} ---> {novo_cargo}')
+    print()
     if verificacao == False:
         print(f'Nenhum funcionário com o ID: {coder}')
+    print()
 
 def editar_informações():
     if not funcionarios:

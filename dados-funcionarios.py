@@ -142,7 +142,7 @@ def menu_edicao(func):
     print('1. Nome')
     print('2. Cargo')
     print('3. Data de nascimento')
-    escolha_opcao = int(input('Escolha uma opção: '))
+    escolha_opcao = input('Escolha uma opção: ')
     return escolha_opcao
 
 def editar_nome_cargo_data_nasc(opcao, senha):
@@ -157,7 +157,7 @@ def editar_nome_cargo_data_nasc(opcao, senha):
     for funcionario in funcionarios:
         if coder == funcionario['ID']:
             verificacao = True
-            if opcao == 1:
+            if opcao == '1':
                 senha_verificação = int(input('Digite a senha para mudar o nome do funcionário: '))
                 tentativas = 0
                 nome_antigo = funcionario['Nome']
@@ -183,7 +183,7 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                             print('Alteração feita com sucesso!')
                             print()
                             print(f'{nome_antigo} ---> {novo_nome}')
-            elif opcao == 2:
+            elif opcao == '2':
                 senha_verificação = int(input('Digite a senha para mudar o cargo do funcionário: '))
                 tentativas = 0
                 cargo_antigo = funcionario['Cargo']
@@ -263,3 +263,4 @@ while True:
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')
+    print('-'*40)

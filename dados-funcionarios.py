@@ -115,7 +115,7 @@ def listar_chefe(): # mostrar apenas chefes
             print('Nenhum chefe cadastrado!')
 
 
-def remover_funcionario(senha):
+def remover_funcionario(senha): # remover algum funcionário
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')

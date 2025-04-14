@@ -192,7 +192,7 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                 if senha == senha_verificação:
                     
                     novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
-                    funcionario['Nome'] = novo_nome
+                    funcionario['Cargo'] = novo_cargo
                     print()
                     print('Alteração feita com sucesso!')
                     print()
@@ -206,11 +206,11 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                             print('Limite de tentativas atingida')
                         if senha == senha_verificação:
                             novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
+                            funcionario['Cargo'] = novo_cargo
                             print()
                             print('Alteração feita com sucesso!')
                             print()
                             print(f'{cargo_antigo} ---> {novo_cargo}')
-    print()
     if verificacao == False:
         print(f'Nenhum funcionário com o ID: {coder}')
     print()

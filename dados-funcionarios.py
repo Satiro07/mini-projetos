@@ -208,6 +208,33 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                             print('Alteração feita com sucesso!')
                             print()
                             print(f'{cargo_antigo} ---> {novo_cargo}')
+            elif opcao == '3':
+                senha_verificação = int(input('Digite a senha para mudar a data de nascimento do funcionário: '))
+                tentativas = 0
+                data_antiga = funcionario['Data de nascimento']
+                if senha == senha_verificação:
+                    
+                    novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
+                    funcionario['Cargo'] = novo_cargo
+                    print()
+                    print('Alteração feita com sucesso!')
+                    print()
+                    print(f'{cargo_antigo} ---> {novo_cargo}')
+                else:
+                    while senha_verificação != senha and tentativas != 3:
+                        print('Senha incorreta!')
+                        senha_verificação = int(input('Digite a senha para mudar o cargo do funcionário: '))
+                        tentativas += 1
+                        if tentativas == 3:
+                            print('Limite de tentativas atingida')
+                        if senha == senha_verificação:
+                            novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
+                            funcionario['Cargo'] = novo_cargo
+                            print()
+                            print('Alteração feita com sucesso!')
+                            print()
+                            print(f'{cargo_antigo} ---> {novo_cargo}')
+
     if verificacao == False:
         print(f'Nenhum funcionário com o ID: {coder}')
     print()

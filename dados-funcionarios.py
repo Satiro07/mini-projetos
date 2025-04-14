@@ -252,7 +252,7 @@ def editar_informações():
     else:
         print('-'*40)
         escolha_opcao = menu_edicao(funcionarios)
-        while escolha_opcao > 3:
+        while escolha_opcao != '1' or escolha_opcao != '2' or escolha_opcao != '3':
             escolha_opcao = menu_edicao(funcionarios)
         if escolha_opcao == '1':
             editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)

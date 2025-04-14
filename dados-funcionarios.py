@@ -265,7 +265,7 @@ def editar_nome_cargo_data_nasc(opcao, senha): #edição de nome, cargo ou data 
             print(f'Nenhum funcionário com o ID: {coder}')
         print()
 
-def editar_informações():
+def editar_informações(): # escolher tipo de edição
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')

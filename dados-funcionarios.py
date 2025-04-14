@@ -111,30 +111,34 @@ def remover_funcionario(senha):
             print('-'*40)
         print()
         print('Remova pelo ID!')
-        coder = int(input('Digite o ID do funcionário que deseja remover: '))
-        verificacao = False
-        for funcionario in funcionarios:
-            if coder == funcionario['ID']:
-                verificacao = True
-                senha_verificação = int(input('Digite a senha para remover funcionário: '))
-                tentativas = 0
-                if senha == senha_verificação:
-                    funcionarios.remove(funcionario)
-                    print()
-                    print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
-                else:
-                    while senha_verificação != senha and tentativas != 3:
-                        print('Senha incorreta!')
-                        senha_verificação = int(input('Digite a senha para remover funcionário: '))
-                        tentativas += 1
-                        if tentativas == 3:
-                            print('Limite de tentativas atingida')
-                        if senha == senha_verificação:
-                            funcionarios.remove(funcionario)
-                            print()
-                            print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
-        if verificacao == False:
-            print(f'Nenhum funcionário com o ID: {coder}')
+        while coder not in funcionario['ID']:
+            coder = int(input('Digite o ID do funcionário que deseja remover: '))
+            verificacao = False
+            for funcionario in funcionarios:
+                if coder == funcionario['ID']:
+                    verificacao = True
+                    senha_verificação = int(input('Digite a senha para remover funcionário: '))
+                    tentativas = 0
+                    if senha == senha_verificação:
+                        funcionarios.remove(funcionario)
+                        print()
+                        print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
+                        break
+                    else:
+                        while senha_verificação != senha and tentativas != 3:
+                            print('Senha incorreta!')
+                            senha_verificação = int(input('Digite a senha para remover funcionário: '))
+                            tentativas += 1
+                            if tentativas == 3:
+                                print('Limite de tentativas atingida')
+                                break
+                            if senha == senha_verificação:
+                                funcionarios.remove(funcionario)
+                                print()
+                                print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
+                                break
+            if verificacao == False:
+                print(f'Nenhum funcionário com o ID: {coder}')
 
 def menu_edicao(func):
     print('O que deseja editar? ')
@@ -161,7 +165,6 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                 tentativas = 0
                 nome_antigo = funcionario['Nome']
                 if senha == senha_verificação:
-                    
                     novo_nome = input('Nome do funcionário atualizado: ')
                     funcionario['Nome'] = novo_nome
                     print()
@@ -187,7 +190,6 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                 tentativas = 0
                 cargo_antigo = funcionario['Cargo']
                 if senha == senha_verificação:
-                    
                     novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
                     funcionario['Cargo'] = novo_cargo
                     print()
@@ -218,7 +220,6 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                     ano = input('Ano em que nasceu: [2000, 2001...] ')
                     nova_data = f'{dia}/' + f'{mes}/' + f'{ano}'
                     funcionario['Data de nascimento'] = nova_data
-
                     print()
                     print('Alteração feita com sucesso!')
                     print()
@@ -261,8 +262,6 @@ def editar_informações():
         elif escolha_opcao == '3':
             editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
         
-
-            
 funcionarios = []
 cod = 1
 senha = 1234

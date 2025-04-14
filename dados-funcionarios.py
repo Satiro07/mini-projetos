@@ -4,7 +4,7 @@ from datetime import datetime
 data_hora = datetime.now()
 data_registro = data_hora.strftime("%d/%m/%Y, Horário: %H:%M:%S")
 
-def menu(func):
+def menu(func): # menu de opções
     print('-'*40)
     print('1. Adicionar funcionario')
     print('2. Exibir todos os funcionarios')

@@ -144,46 +144,51 @@ def menu_edicao():
     escolha_opcao = int(input('Escolha uma opção: '))
     return escolha_opcao
 
-def editar_nome_cargo_data_nasc(opcao):
-    senha = 1234
+def editar_nome_cargo_data_nasc(opcao, senha):
     coder = int(input('Digite o ID do funcionário que deseja remover: '))
     verificacao = False
     for funcionario in funcionarios:
         if coder == funcionario['ID']:
             verificacao = True
-            senha_verificação = int(input('Digite a senha para remover funcionário: '))
-            tentativas = 0
-    #         if senha == senha_verificação:
-    #             funcionarios.remove(funcionario)
-    #             print()
-    #             print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
-    #         else:
-    #             while senha_verificação != senha and tentativas != 3:
-    #                 print('Senha incorreta!')
-    #                 senha_verificação = int(input('Digite a senha para remover funcionário: '))
-    #                 tentativas += 1
-    #                 if tentativas == 3:
-    #                     print('Limite de tentativas atingida')
-    #                 if senha == senha_verificação:
-    #                     funcionarios.remove(funcionario)
-    #                     print()
-    #                     print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
+            if opcao == 1:
+                senha_verificação = int(input('Digite a senha para mudar o nome do funcionário: '))
+                tentativas = 0
+                nome_antigo = funcionario['Nome']
+                if senha == senha_verificação:
+                    
+                    novo_nome = input('Nome do funcionário atualizado: ')
+                    funcionario['Nome'] = novo_nome
+                    print()
+                    print('Alteração feita com sucesso!')
+                    print()
+                    print(f'{nome_antigo} ---> {novo_nome}')
+                else:
+                    while senha_verificação != senha and tentativas != 3:
+                        print('Senha incorreta!')
+                        senha_verificação = int(input('Digite a senha para remover funcionário: '))
+                        tentativas += 1
+                        if tentativas == 3:
+                            print('Limite de tentativas atingida')
+                        if senha == senha_verificação:
+                            funcionarios.remove(funcionario)
+                            print()
+                            print(f"Funcionario(a) {funcionario['Nome'].upper()}, removido com sucesso!")
     # if verificacao == False:
     #     print(f'Nenhum funcionário com o ID: {coder}')
 
-# def editar_informações():
-#     if not funcionarios:
-#         print()
-#         print('Nenhum funcionário adicionado!')
-#     else:
-#         print('-'*40)
-#         escolha_opcao = 0
-#         while escolha_opcao > 3:
-#             escolha_opcao = menu_edicao(funcionarios)
-#         if escolha_opcao == 1:
-#             editar = editar_nome_cargo_data_nasc(escolha_opcao)
-#         elif escolha_opcao == 2:
-#         elif escolha_opcao == 3:
+def editar_informações():
+    if not funcionarios:
+        print()
+        print('Nenhum funcionário adicionado!')
+    else:
+        print('-'*40)
+        escolha_opcao = 0
+        while escolha_opcao > 3:
+            escolha_opcao = menu_edicao(funcionarios)
+        if escolha_opcao == 1:
+            editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
+        elif escolha_opcao == 2:
+        elif escolha_opcao == 3:
         
 
             

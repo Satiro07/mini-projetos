@@ -296,4 +296,3 @@ while True:
     else:
         print('-'*40)
         print('Erro! Escolha uma opção válida!')
-    print('-'*40)

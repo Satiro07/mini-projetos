@@ -213,13 +213,16 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                 tentativas = 0
                 data_antiga = funcionario['Data de nascimento']
                 if senha == senha_verificação:
-                    
-                    novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
-                    funcionario['Cargo'] = novo_cargo
+                    dia = input('Dia em que nasceu: ')
+                    mes = input('Mês em que nasceu: [01, 02...] ')
+                    ano = input('Ano em que nasceu: [2000, 2001...] ')
+                    nova_data = f'{dia}/' + f'{mes}/' + f'{ano}'
+                    funcionario['Data de nascimento'] = nova_data
+
                     print()
                     print('Alteração feita com sucesso!')
                     print()
-                    print(f'{cargo_antigo} ---> {novo_cargo}')
+                    print(f'{data_antiga} ---> {nova_data}')
                 else:
                     while senha_verificação != senha and tentativas != 3:
                         print('Senha incorreta!')
@@ -228,12 +231,15 @@ def editar_nome_cargo_data_nasc(opcao, senha):
                         if tentativas == 3:
                             print('Limite de tentativas atingida')
                         if senha == senha_verificação:
-                            novo_cargo = input(f'Nome do cargo do funcionário {funcionario["Nome"]} atualizado: ')
-                            funcionario['Cargo'] = novo_cargo
+                            dia = input('Dia em que nasceu: ')
+                            mes = input('Mês em que nasceu: [01, 02...] ')
+                            ano = input('Ano em que nasceu: [2000, 2001...] ')
+                            nova_data = f'{dia}/' + f'{mes}/' + f'{ano}'
+                            funcionario['Data de nascimento'] = nova_data
                             print()
                             print('Alteração feita com sucesso!')
                             print()
-                            print(f'{cargo_antigo} ---> {novo_cargo}')
+                            print(f'{data_antiga} ---> {nova_data}')
 
     if verificacao == False:
         print(f'Nenhum funcionário com o ID: {coder}')

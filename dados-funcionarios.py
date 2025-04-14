@@ -77,7 +77,7 @@ def exibir_funcionarios(): # mostrar funcionarios
                 print(f'{k}: {v}')
             print('-'*40)
         
-def listar_gerente():
+def listar_gerente(): # mostrar apenas gerentes
     if not funcionarios:
         print()
         print('Nenhum funcionário adicionado!')

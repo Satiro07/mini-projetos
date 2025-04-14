@@ -258,7 +258,8 @@ def editar_informações():
             editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
         elif escolha_opcao == '2':
             editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
-        # elif escolha_opcao == '3':
+        elif escolha_opcao == '3':
+            editar = editar_nome_cargo_data_nasc(escolha_opcao, senha)
         
 
             

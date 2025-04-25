@@ -27,6 +27,7 @@ function listar_alunos () {
         for (let i = 0; i < quantidade; i++) {
             console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);
         }
+        console.log(`Média: ${aluno['media']}`);
     }
 };
 

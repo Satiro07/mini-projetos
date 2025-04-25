@@ -18,7 +18,7 @@ function add_alunos (id) {
 
     console.log(`Aluno(a) ${nome} adicionado com sucesso!`)
     alunos.push({id: id, nome: nome, notas: notas = notas, media: (notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3).toFixed(2)});
-    return id += 1;
+  
 };
 
 function listar_alunos () {
@@ -69,11 +69,11 @@ function editar_aluno () {
                 console.log('Mudança feita!');
                 console.log(`${nome_temporario} -> ${novo_nome}`)
             }
+        if (verificacao == false) {
+            console.log(`Aluno ${escolha_nome} não encontrado!`)
+        }  
         }
     }
-    if (verificacao == false) {
-        console.log(`Aluno ${escolha_nome} não encontrado!`)
-    }  
 };
 
 let id = 1;
@@ -82,6 +82,7 @@ while (true) {
     escolha = menu();
     if (escolha == '1') {
         add_alunos(id);
+        id += 1;
     }
     else if (escolha == '2') {
         listar_alunos();

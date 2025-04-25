@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')();
 
 let alunos = [];
-function menu(esc) {
+function menu() {
     console.log('MENU');
     console.log(' 1. adicionar aluno\n 2. listar alunos');
     let escolha = prompt('Escolha uma opção: ');
@@ -26,7 +26,8 @@ function listar_alunos () {
 };
 
 while (true) {
-    escolha = menu(e);
+    
+    escolha = menu();
     if (escolha == '1') {
         add_alunos();
     }

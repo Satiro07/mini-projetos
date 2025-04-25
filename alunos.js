@@ -54,12 +54,12 @@ function buscar_aluno () {
 function editar_aluno () {
     let modificar = prompt('O que deseja editar [1 -> nome do aluno(a), 2 -> notas do aluno(a)] ');
     console.log('Alunos cadastrados');
+    let verificacao = false;
     for (let aluno of alunos) {
         console.log(`Nome: ${aluno['nome']}, notas: ${aluno['nota']}`);
     }
     if (modificar == '1') { 
         let escolha_nome = prompt('Digite o nome do aluno: '); 
-        let verificacao = false;
         for (let aluno of alunos) {
             if (escolha_nome.toLocaleLowerCase() == aluno['nome'].toLocaleLowerCase()) {
                 nome_temporario = aluno['nome'];
@@ -67,7 +67,7 @@ function editar_aluno () {
                 aluno['nome'] = novo_nome;
                 verificacao = true;
                 console.log('Mudança feita!');
-                console.log(`${nome_temporario} -> ${escolha_nome}`)
+                console.log(`${nome_temporario} -> ${novo_nome}`)
             }
         }
     }

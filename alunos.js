@@ -47,7 +47,6 @@ function buscar_aluno () {
     }
 };
 
-
 while (true) {
     escolha = menu();
     if (escolha == '1') {

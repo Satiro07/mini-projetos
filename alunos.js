@@ -62,17 +62,19 @@ function editar_aluno () {
         let verificacao = false;
         for (let aluno of alunos) {
             if (escolha_nome.toLocaleLowerCase() == aluno['nome'].toLocaleLowerCase()) {
-                aluno['nome'] = escolha_nome;
+                nome_temporario = aluno['nome'];
+                let novo_nome = prompt('Digite o nome certo: ');
+                aluno['nome'] = novo_nome;
                 verificacao = true;
                 console.log('Mudança feita!');
-                console.log(`${aluno['nome']} -> ${escolha_nome}`)
+                console.log(`${nome_temporario} -> ${escolha_nome}`)
             }
         }
-        if (verificacao == false) {
-            console.log(`Aluno ${escolha_nome} não encontrado!`)
-        }
     }
-}
+    if (verificacao == false) {
+        console.log(`Aluno ${escolha_nome} não encontrado!`)
+    }  
+};
 
 let id = 1;
 

@@ -33,22 +33,22 @@ function buscar_aluno () {
     let buscar_nome = prompt('Nome do aluno que deseja procurar: ');
     let verificacao = false;
     for (let aluno of alunos) {
-        if (buscar_aluno.toLowerCase() == aluno['nome'].toLowerCase()) {
+        if (buscar_nome.toLowerCase() == aluno['nome'].toLowerCase()) {
             console.log(`Aluno: ${aluno['nome']}`);
             verificacao = true;
+            let quantidade = aluno['notas'].length 
             for (let i = 0; i < quantidade; i++) {
                 console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);
             }
         }
     }
     if (verificacao == false) {
-        console.log('Aluno não encontrado!');
+        console.log(`Aluno ${buscar_nome} não encontrado!`);
     }
 };
 
 
 while (true) {
-    
     escolha = menu();
     if (escolha == '1') {
         add_alunos();
@@ -56,7 +56,14 @@ while (true) {
     else if (escolha == '2') {
         listar_alunos();
     }
-    else {
+    else if (escolha == '3') {
+        buscar_aluno();
+    }
+    else if (escolha == '4') {
+        console.log('Fim do programa!');
         break;
+    }
+    else {
+        console.log('Opção inválida!');
     }
 }

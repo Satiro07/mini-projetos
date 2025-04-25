@@ -15,8 +15,9 @@ function add_alunos () {
         let nota = parseFloat(prompt(`Nota ${i} do aluno: `));
         notas.push(nota);
     }
+    let media = notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3;
     console.log(`Aluno ${nome} adicionado com sucesso!`)
-    alunos.push({nome: nome, notas: notas});
+    alunos.push({nome: nome, notas: notas, media: media.toFixed(2)});
 };
 
 function listar_alunos () {

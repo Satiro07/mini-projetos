@@ -52,9 +52,13 @@ function buscar_aluno () {
 };
 
 function editar_aluno () {
-    let modificar = prompt('O que deseja editar [1 -> nome do aluno(a), 2 -> notas do aluno(a) ');
-    if (modificar == '1') {
-        
+    let modificar = prompt('O que deseja editar [1 -> nome do aluno(a), 2 -> notas do aluno(a)] ');
+    console.log('Alunos cadastrados');
+    for (let aluno of alunos) {
+        console.log(`Nome: ${aluno['nome']}, notas: ${aluno['nota']}`);
+    }
+    if (modificar == '1') { 
+        let escolha_nome = prompt('Digite o nome do aluno: '); 
     }
 }
 

@@ -3,7 +3,7 @@ const prompt = require('prompt-sync')();
 let alunos = [];
 function menu() {
     console.log('MENU');
-    console.log(' 1. adicionar aluno\n 2. listar alunos');
+    console.log(' 1. adicionar aluno\n 2. listar alunos\n 3. buscar aluno\n 4. sair');
     let escolha = prompt('Escolha uma opção: ');
     return escolha;
 };
@@ -26,6 +26,23 @@ function listar_alunos () {
         for (let i = 0; i < quantidade; i++) {
             console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);
         }
+    }
+};
+
+function buscar_aluno () {
+    let buscar_nome = prompt('Nome do aluno que deseja procurar: ');
+    let verificacao = false;
+    for (let aluno of alunos) {
+        if (buscar_aluno.toLowerCase() == aluno['nome'].toLowerCase()) {
+            console.log(`Aluno: ${aluno['nome']}`);
+            verificacao = true;
+            for (let i = 0; i < quantidade; i++) {
+                console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);
+            }
+        }
+    }
+    if (verificacao == false) {
+        console.log('Aluno não encontrado!');
     }
 };
 

@@ -3,26 +3,27 @@ const prompt = require('prompt-sync')();
 let alunos = [];
 function menu() {
     console.log('MENU');
-    console.log(' 1. adicionar aluno(a)\n 2. listar alunos\n 3. buscar aluno(a)\n 4. sair');
+    console.log(' 1. adicionar aluno(a)\n 2. listar alunos\n 3. buscar aluno(a)\n 4. editar aluno(a)\n 5. sair');
     let escolha = prompt('Escolha uma opção: ');
     return escolha;
 };
 
-function add_alunos () {
+function add_alunos (id) {
     let nome = prompt('Nome do aluno(a): ');
     let notas = []
     for (let i = 1; i <= 3; i++) {
         let nota = parseFloat(prompt(`Nota ${i} do aluno(a): `));
         notas.push(nota);
     }
-    let media = notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3;
+
     console.log(`Aluno(a) ${nome} adicionado com sucesso!`)
-    alunos.push({nome: nome, notas: notas, media: media.toFixed(2)});
+    alunos.push({id: id, nome: nome, notas: notas = notas, media: (notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3).toFixed(2)});
+    return id += 1;
 };
 
 function listar_alunos () {
     for (let aluno of alunos) {
-        console.log(`Aluno(a): ${aluno['nome']}`);
+        console.log(`Aluno(a): ${aluno['nome']}, ID: ${aluno['id']}`);
         let quantidade = aluno['notas'].length 
         for (let i = 0; i < quantidade; i++) {
             console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);
@@ -50,10 +51,19 @@ function buscar_aluno () {
     }
 };
 
+function editar_aluno () {
+    let modificar = prompt('O que deseja editar [1 -> nome do aluno(a), 2 -> notas do aluno(a) ');
+    if (modificar == '1') {
+        
+    }
+}
+
+let id = 1;
+
 while (true) {
     escolha = menu();
     if (escolha == '1') {
-        add_alunos();
+        add_alunos(id);
     }
     else if (escolha == '2') {
         listar_alunos();
@@ -62,6 +72,9 @@ while (true) {
         buscar_aluno();
     }
     else if (escolha == '4') {
+        editar_aluno();
+    }
+    else if (escolha == '5') {
         console.log('Fim do programa!');
         break;
     }

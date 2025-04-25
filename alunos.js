@@ -16,17 +16,19 @@ function add_alunos () {
         notas.push(nota);
     }
     console.log(`Aluno ${nome} adicionado com sucesso!`)
-    alunos.push({nome: notas});
+    alunos.push({nome: nome, notas: notas});
 };
 
 function listar_alunos () {
-    for (let aluno of Object.keys(alunos)) {
-        console.log(aluno['nome']);
-        for (let aluno of Object.values(alunos)) {
-            console.log(aluno)
+    for (let aluno of alunos) {
+        console.log(`Aluno: ${aluno['nome']}`);
+        let quantidade = aluno['notas'].length 
+        for (let i = 0; i < quantidade; i++) {
+            console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);
         }
     }
 };
+
 
 while (true) {
     

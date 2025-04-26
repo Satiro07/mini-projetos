@@ -8,7 +8,7 @@ function menu() {
     return escolha;
 };
 
-function add_alunos (id) {
+const add_alunos = (id) => {
     let nome = prompt('Nome do aluno(a): ');
     let notas = []
     for (let i = 1; i <= 3; i++) {
@@ -56,7 +56,7 @@ function editar_aluno () {
     console.log('Alunos cadastrados');
     let verificacao = false;
     for (let aluno of alunos) {
-        console.log(`Nome: ${aluno['nome']}, notas: ${aluno['nota']}`);
+        console.log(`Nome: ${aluno['nome']}, notas: ${aluno['notas']}`);
     }
     if (modificar == '1') { 
         let escolha_nome = prompt('Digite o nome do aluno: '); 

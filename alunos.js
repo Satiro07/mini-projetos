@@ -21,7 +21,7 @@ const add_alunos = (id) => {
   
 };
 
-function listar_alunos () {
+const listar_alunos = () => {
     for (let aluno of alunos) {
         console.log(`Aluno(a): ${aluno['nome']}, ID: ${aluno['id']}`);
         let quantidade = aluno['notas'].length 

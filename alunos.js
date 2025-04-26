@@ -103,9 +103,9 @@ const remover_aluno = () => {
     let nome_aluno = prompt('Nome do aluno(a) que deseja remover: ')
     for (let aluno of alunos) {
         if (nome_aluno.toLocaleLowerCase() == aluno['nome'].toLocaleLowerCase()) {
-            delete nome.aluno
-            delete notas.aluno
-            delete id.aluno
+            delete aluno.nome
+            delete aluno.notas
+            delete aluno.id
             verificacao = true
             console.log(`Aluno(a) ${nome_aluno} removido com sucesso!`)
         }

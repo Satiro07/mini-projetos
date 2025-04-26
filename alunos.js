@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')();
 
 let alunos = [];
-function menu() {
+const menu = () => {
     console.log('MENU');
     console.log(' 1. adicionar aluno(a)\n 2. listar alunos\n 3. buscar aluno(a)\n 4. editar aluno(a)\n 5. sair');
     let escolha = prompt('Escolha uma opção: ');

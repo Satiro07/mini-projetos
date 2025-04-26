@@ -105,7 +105,7 @@ const remover_aluno = () => {
         if (nome_aluno.toLocaleLowerCase() == aluno['nome'].toLocaleLowerCase()) {
             delete aluno
             verificacao = true
-            console.log(`Aluno `)
+            console.log(`Aluno(a) ${nome_aluno} removido com sucesso!`)
         }
     }
     if (verificacao == false) {

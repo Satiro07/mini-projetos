@@ -7,11 +7,9 @@ def adicionar_categorias(lista):
         if nome_escolha_categoria == '':
             print('Você precisa digitar algo!')
             continue
-        
         if nome_escolha_categoria not in lista:
             veri = True
             for categoria in lista:
-                
                 if nome_escolha_categoria.lower() == categoria[0].lower():
                     veri = False
                     continue
@@ -62,7 +60,6 @@ def exibir_tarefas(lista):
     else: 
         contagem = 0
         for categoria in lista:
-            
             verificacao = True
             if contagem == 0: 
                 print('Categorias e tarefas adicionadas: ')

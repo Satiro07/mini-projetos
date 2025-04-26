@@ -72,21 +72,25 @@ const editar_aluno = () => {
             }
         }
         if (verificacao == false) {
-            console.log(`Aluno ${escolha_nome} não encontrado!`)    
+            console.log(`Aluno(a) ${escolha_nome} não encontrado!`)    
         }
     }
     else if (modificar == '2') {
-        let escolha_nome = prompt('Nome do aluno que você deseja mudar as notas: '); 
+        let escolha_nome = prompt('Nome do aluno(a) que você deseja mudar as notas: '); 
         for (let aluno of alunos) {
             if (escolha_nome.toLocaleLowerCase() == aluno['nome'].toLocaleLowerCase()) {
+                verificacao = true
                 for (let i = 1; i <= 3; i ++) {
-                    let nota = parseFloat(prompt(`Nota ${i} do aluno: `))
+                    let nota = parseFloat(prompt(`Nota ${i} do aluno(a): `))
                     notas.push(nota)
                 }
                 aluno['notas'] = notas
                 let media = notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3
                 aluno['media'] = media.toFixed(2)
             }
+        }
+        if (verificacao == false) {
+            console.log(`Aluno(a) ${escolha_nome} não encontrado!`)    
         }  
     }
 };

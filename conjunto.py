@@ -40,10 +40,13 @@ def exibir_tarefas():
     if not categorias:
         print('Nenhuma categoria adicionada! Você precisa adicionar pelo menos uma!')
     else: 
+        cont = 0
         for categoria in categorias:
-            print('Categorias e tarefas adicionadas: ')
             if categoria[1] != []:
                 verificacao = True
+                if cont == 0: 
+                    print('Categorias e tarefas adicionadas: ')
+                    cont += 1
                 print(f'Nome da categoria: {categoria[0]}')
                 print('Tarefas: ')
                 cont = 1

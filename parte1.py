@@ -12,11 +12,11 @@ def menu(esc):
 while True:
     esc = menu(0)
     if esc == '1':
-        parte2.adicionar_categorias()
+        parte2.adicionar_categorias(categorias)
     elif esc == '2':
-        parte2.adicionar_tarefas()
+        parte2.adicionar_tarefas(categorias)
     elif esc == '3':
-        parte2.exibir_tarefas()
+        parte2.exibir_tarefas(categorias)
     elif esc == '4':
         print('Saindo')
         break

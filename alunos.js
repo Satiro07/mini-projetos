@@ -6,7 +6,7 @@ const menu = () => {
     console.log(' 1. adicionar aluno(a)\n 2. listar alunos\n 3. buscar aluno(a)\n 4. editar aluno(a)\n 5. exluir aluno(a)\n 6. sair')
     let escolha = prompt('Escolha uma opção: ')
     return escolha
-};
+}
 
 const add_alunos = (id) => {
     let nome = prompt('Nome do aluno(a): ')
@@ -17,7 +17,7 @@ const add_alunos = (id) => {
     }
 
     console.log(`Aluno(a) ${nome} adicionado com sucesso!`)
-    alunos.push({id: id, nome: nome, notas: notas = notas, media: (notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3).toFixed(2)});
+    alunos.push({id: id, nome: nome, notas: notas = notas, media: (notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3).toFixed(2)})
   
 };
 

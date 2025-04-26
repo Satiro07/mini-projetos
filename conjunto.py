@@ -17,7 +17,6 @@ def adicionar_tarefas():
     else:
         for categoria in categorias:
             print(f'Nome da categoria: {categoria[0]}')
-
         nome_escolha_categoria = input('Nome da categoria que deseja adicionar : ').lower()
         for categoria in categorias:
             if nome_escolha_categoria == categoria[0].lower():
@@ -35,16 +34,14 @@ def adicionar_tarefas():
             categorias.append([nome_categoria, []])
             print(f'Categoria {nome_categoria} adicionada com sucesso!')
             adicionar_tarefas()
-        
-
-
-            
+  
 def exibir_tarefas():
     verificacao = False
     if not categorias:
         print('Nenhuma categoria adicionada! Você precisa adicionar pelo menos uma!')
     else: 
         for categoria in categorias:
+            print('Categorias e tarefas adicionadas: ')
             if categoria[1] != []:
                 verificacao = True
                 print(f'Nome da categoria: {categoria[0]}')

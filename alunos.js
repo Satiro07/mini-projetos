@@ -55,6 +55,7 @@ function editar_aluno () {
     let modificar = prompt('O que deseja editar [1 -> nome do aluno(a), 2 -> notas do aluno(a)] ');
     console.log('Alunos cadastrados');
     let verificacao = false;
+    let notas = []
     for (let aluno of alunos) {
         console.log(`Nome: ${aluno['nome']}, notas: ${aluno['notas']}`);
     }
@@ -69,10 +70,24 @@ function editar_aluno () {
                 console.log('Mudança feita!');
                 console.log(`${nome_temporario} -> ${novo_nome}`)
             }
-        if (verificacao == false) {
-            console.log(`Aluno ${escolha_nome} não encontrado!`)
-        }  
         }
+        if (verificacao == false) {
+            console.log(`Aluno ${escolha_nome} não encontrado!`)    
+        }
+    }
+    else if (modificar == '2') {
+        let escolha_nome = prompt('Nome do aluno que você deseja mudar as notas: '); 
+        for (let aluno of alunos) {
+            if (escolha_nome.toLocaleLowerCase() == aluno['nome'].toLocaleLowerCase()) {
+                for (let i = 1; i <= 3; i ++) {
+                    let nota = parseFloat(prompt(`Nota ${i} do aluno: `))
+                    notas.push(nota)
+                }
+                aluno['notas'] = notas
+                let media = notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3
+                aluno['media'] = media.toFixed(2)
+            }
+        }  
     }
 };
 

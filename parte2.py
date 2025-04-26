@@ -8,7 +8,7 @@ def adicionar_categorias(lista):
             print(f'Categoria {nome_escolha_categoria} adicionada com sucesso!')
         else:
             print('Categoria já esta adicionada!')
-        esc = input('Deseja adicionar mais lista? [s/n] ').lower()
+        esc = input('Deseja adicionar mais categorias? [s/n] ').lower()
 
 def adicionar_tarefas(lista):
     verificacao = False
@@ -48,7 +48,7 @@ def exibir_tarefas(lista):
             if categoria[1] != []:
                 verificacao = True
                 if cont == 0: 
-                    print('lista e tarefas adicionadas: ')
+                    print('Categorias e tarefas adicionadas: ')
                     cont += 1
                 print(f'Nome da categoria: {categoria[0]}')
                 print('Tarefas: ')

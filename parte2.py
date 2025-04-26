@@ -1,5 +1,5 @@
-categorias = []
-def adicionar_categoria():
+
+def adicionar_categorias():
     esc = 's'
     while esc != 'n':
         nome_escolha_categoria = input('Nome da categoria: ')
@@ -60,9 +60,3 @@ def exibir_tarefas():
     if verificacao == False:
         print('Nenhuma tarefa adicionada!')
 
-
-adicionar_categoria()
-
-adicionar_tarefas()
-
-exibir_tarefas()

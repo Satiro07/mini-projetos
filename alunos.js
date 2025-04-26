@@ -3,7 +3,7 @@ const prompt = require('prompt-sync')();
 let alunos = [];
 const menu = () => {
     console.log('MENU');
-    console.log(' 1. adicionar aluno(a)\n 2. listar alunos\n 3. buscar aluno(a)\n 4. editar aluno(a)\n 5. sair');
+    console.log(' 1. adicionar aluno(a)\n 2. listar alunos\n 3. buscar aluno(a)\n 4. editar aluno(a)\n 5. exluir aluno(a)\n 6. sair');
     let escolha = prompt('Escolha uma opção: ');
     return escolha;
 };
@@ -95,6 +95,15 @@ const editar_aluno = () => {
     }
 };
 
+const remover_aluno = () => {
+    let verificacao = false
+    for (let aluno of alunos) {
+        console.log(`Nome: ${aluno['nome']}`);
+    }
+    let nome_aluno = prompt('Nome do aluno(a) que deseja remover: ')
+
+}   
+
 let id = 1;
 
 while (true) {
@@ -113,6 +122,9 @@ while (true) {
         editar_aluno();
     }
     else if (escolha == '5') {
+        remover_aluno()
+    }
+    else if (escolha == '6') {
         console.log('Fim do programa!');
         break;
     }

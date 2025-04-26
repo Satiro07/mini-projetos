@@ -2,14 +2,18 @@
 def adicionar_categorias(lista):
     esc = 's'
     while esc != 'n':
+        verificacao = False
         nome_escolha_categoria = input('Nome da categoria: ').strip()
         if nome_escolha_categoria == '':
             print('Você precisa digitar algo!')
             continue
         if nome_escolha_categoria not in lista:
-            lista.append([nome_escolha_categoria, []])
-            print(f'Categoria {nome_escolha_categoria} adicionada com sucesso!')
-        else:
+            for categoria in lista:
+                if nome_escolha_categoria.lower() == categoria[0].lower():
+                    verificacao = True
+                    lista.append([nome_escolha_categoria, []])
+            print(f'Categoria "{nome_escolha_categoria}" adicionada com sucesso!')
+        if verificacao == False:
             print('Categoria já esta adicionada!')
         esc = input('Deseja adicionar mais categorias? [s/n] ').lower()
 
@@ -27,7 +31,9 @@ def adicionar_tarefas(lista):
                 escolha = 's'
                 while escolha != 'n':
                     tarefa = input('Digite uma tarefa: ').strip()
-                    if tarefa != '':
+                    if tarefa in categoria[1]:
+                        print(f'Tarefa "{tarefa}" já está adicionada!')
+                    elif tarefa != '':
                         categoria[1].append(tarefa)
                     else:
                         print('Você precisa digitar algo!')
@@ -38,7 +44,7 @@ def adicionar_tarefas(lista):
         if opcao == 's':
             nome_categoria = input('Digito o nome da categoria que quer adicionar: ')
             lista.append([nome_categoria, []])
-            print(f'Categoria {nome_categoria} adicionada com sucesso!')
+            print(f'Categoria "{nome_categoria}" adicionada com sucesso!')
             adicionar_tarefas()
   
 def exibir_tarefas(lista):

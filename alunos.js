@@ -26,12 +26,12 @@ const listar_alunos = () => {
         console.log(`Aluno(a): ${aluno['nome']}, ID: ${aluno['id']}`)
         let quantidade = aluno['notas'].length 
         for (let i = 0; i < quantidade; i++) {
-            console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);
+            console.log(`Nota ${i+1}: ${aluno['notas'][i]}`)
         }
-        console.log(`Média: ${aluno['media']}`);
-        console.log();
+        console.log(`Média: ${aluno['media']}`)
+        console.log()
     }
-};
+}
 
 const buscar_aluno = () => {
     let buscar_nome = prompt('Nome do aluno(a) que deseja procurar: ');

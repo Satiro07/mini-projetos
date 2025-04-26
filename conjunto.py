@@ -42,7 +42,7 @@ def exibir_tarefas():
     else: 
         cont = 0
         for categoria in categorias:
-            if categoria[1] != []:
+            if categoria[1] != [] or categoria[1] != ['']:
                 verificacao = True
                 if cont == 0: 
                     print('Categorias e tarefas adicionadas: ')

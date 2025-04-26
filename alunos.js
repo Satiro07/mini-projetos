@@ -19,11 +19,11 @@ const add_alunos = (id) => {
     console.log(`Aluno(a) ${nome} adicionado com sucesso!`)
     alunos.push({id: id, nome: nome, notas: notas = notas, media: (notas.reduce((acumulador, atual) => acumulador + atual, 0) / 3).toFixed(2)})
   
-};
+}
 
 const listar_alunos = () => {
     for (let aluno of alunos) {
-        console.log(`Aluno(a): ${aluno['nome']}, ID: ${aluno['id']}`);
+        console.log(`Aluno(a): ${aluno['nome']}, ID: ${aluno['id']}`)
         let quantidade = aluno['notas'].length 
         for (let i = 0; i < quantidade; i++) {
             console.log(`Nota ${i+1}: ${aluno['notas'][i]}`);

@@ -7,11 +7,19 @@ def adicionar_categorias(lista):
         if nome_escolha_categoria == '':
             print('Você precisa digitar algo!')
             continue
+        
         if nome_escolha_categoria not in lista:
+            veri = True
             for categoria in lista:
+                
                 if nome_escolha_categoria.lower() == categoria[0].lower():
-                    verificacao = True
-                    lista.append([nome_escolha_categoria, []])
+                    veri = False
+                    continue
+                else:
+                    veri = True
+            if veri == True:
+                verificacao = True
+                lista.append([nome_escolha_categoria, []])
             print(f'Categoria "{nome_escolha_categoria}" adicionada com sucesso!')
         if verificacao == False:
             print('Categoria já esta adicionada!')

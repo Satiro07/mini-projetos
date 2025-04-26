@@ -51,7 +51,7 @@ function buscar_aluno () {
     }
 };
 
-function editar_aluno () {
+const editar_aluno = () => {
     let modificar = prompt('O que deseja editar [1 -> nome do aluno(a), 2 -> notas do aluno(a)] ');
     console.log('Alunos cadastrados');
     let verificacao = false;

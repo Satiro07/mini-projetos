@@ -20,7 +20,7 @@ def adicionar_categorias(lista):
             if veri == True:
                 verificacao = True
                 lista.append([nome_escolha_categoria, []])
-            print(f'Categoria "{nome_escolha_categoria}" adicionada com sucesso!')
+                print(f'Categoria "{nome_escolha_categoria}" adicionada com sucesso!')
         if verificacao == False:
             print('Categoria já esta adicionada!')
         esc = input('Deseja adicionar mais categorias? [s/n] ').lower()
@@ -46,34 +46,37 @@ def adicionar_tarefas(lista):
                     else:
                         print('Você precisa digitar algo!')
                     escolha = input('Deseja adicionar mais tarefas? [s/n] ').lower()
-    if verificacao == False:
-        print(f'Categoria "{nome_escolha_categoria}" não encontrada!')
-        opcao = input('Deseja adicionar ela? [s/n] ').lower()
-        if opcao == 's':
-            nome_categoria = input('Digito o nome da categoria que quer adicionar: ')
-            lista.append([nome_categoria, []])
-            print(f'Categoria "{nome_categoria}" adicionada com sucesso!')
-            adicionar_tarefas()
+        if verificacao == False:
+            print(f'Categoria "{nome_escolha_categoria}" não encontrada!')
+            opcao = input('Deseja adicionar ela? [s/n] ').lower()
+            if opcao == 's':
+                nome_categoria = input('Digito o nome da categoria que quer adicionar: ')
+                lista.append([nome_categoria, []])
+                print(f'Categoria "{nome_categoria}" adicionada com sucesso!')
+                adicionar_tarefas()
   
 def exibir_tarefas(lista):
     verificacao = False
     if not lista:
         print('Nenhuma categoria adicionada! Você precisa adicionar pelo menos uma!')
     else: 
-        cont = 0
+        contagem = 0
         for categoria in lista:
-            if categoria[1] != []:
-                verificacao = True
-                if cont == 0: 
-                    print('Categorias e tarefas adicionadas: ')
-                    cont += 1
-                print(f'Nome da categoria: {categoria[0]}')
-                print('Tarefas: ')
-                cont = 1
+            
+            verificacao = True
+            if contagem == 0: 
+                print('Categorias e tarefas adicionadas: ')
+                contagem += 1
+            print(f'Nome da categoria: {categoria[0]}')
+            print('Tarefas: ')
+            cont = 1
+            if categoria[1] == []:
+                print('Nenhuma tarefa adicionada')
+            else:
                 for tarefas in categoria[1]:
                     print(f'{cont}. {tarefas}')
                     cont += 1
-                print()
+            print()
     if verificacao == False:
         print('Nenhuma tarefa adicionada!')
 

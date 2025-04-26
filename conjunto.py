@@ -1,4 +1,4 @@
-categorias = [['casa', []]]
+categorias = []
 def adicionar_categoria():
     esc = 's'
     while esc != 'n':
@@ -8,9 +8,10 @@ def adicionar_categoria():
             print(f'Categoria {nome_escolha_categoriaegoria} adicionada com sucesso!')
         else:
             print('Categoria já esta adicionada!')
-        esc = input('Deseja adicionar mais categorias? [s/n]').lower()
+        esc = input('Deseja adicionar mais categorias? [s/n] ').lower()
 
 def adicionar_tarefas():
+    verificacao = False
     if not categorias:
         print('Nenhuma categoria adicionada! Você precisa adicionar pelo menos uma!')
     else:
@@ -20,11 +21,14 @@ def adicionar_tarefas():
         nome_escolha_categoria = input('Nome da categoria que deseja adicionar : ').lower()
         for categoria in categorias:
             if nome_escolha_categoria == categoria[0].lower():
+                verificacao = True
                 escolha = 's'
                 while escolha != 'n':
                     tarefa = input('Digite uma tarefa: ')
                     categoria[1].append(tarefa)
                     escolha = input('Deseja adicionar mais tarefas? [s/n] ').lower()
+    if verificacao == False:
+        print(f'Categoria "{nome_escolha_categoria}" não encontrada!')
             
 def exibir_tarefas():
     verificacao = False
@@ -44,10 +48,9 @@ def exibir_tarefas():
     if verificacao == False:
         print('Nenhuma tarefa adicionada!')
 
-esco = 3
-if esco == 1:
-    adicionar_categoria()
-elif esco == 2: 
-    adicionar_tarefas()
-elif esco == 3:
-    exibir_tarefas()
+
+adicionar_categoria()
+
+adicionar_tarefas()
+
+exibir_tarefas()

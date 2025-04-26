@@ -24,7 +24,10 @@ def adicionar_tarefas():
                 escolha = 's'
                 while escolha != 'n':
                     tarefa = input('Digite uma tarefa: ')
-                    categoria[1].append(tarefa)
+                    if tarefa != '':
+                        categoria[1].append(tarefa)
+                    else:
+                        print('Você precisa digitar algo!')
                     escolha = input('Deseja adicionar mais tarefas? [s/n] ').lower()
     if verificacao == False:
         print(f'Categoria "{nome_escolha_categoria}" não encontrada!')
@@ -42,7 +45,7 @@ def exibir_tarefas():
     else: 
         cont = 0
         for categoria in categorias:
-            if categoria[1] != [] or categoria[1] != ['']:
+            if categoria[1] != []:
                 verificacao = True
                 if cont == 0: 
                     print('Categorias e tarefas adicionadas: ')

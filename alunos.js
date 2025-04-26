@@ -101,7 +101,16 @@ const remover_aluno = () => {
         console.log(`Nome: ${aluno['nome']}`);
     }
     let nome_aluno = prompt('Nome do aluno(a) que deseja remover: ')
-
+    for (let aluno of alunos) {
+        if (nome_aluno.toLocaleLowerCase() == aluno['nome'].toLocaleLowerCase()) {
+            delete aluno
+            verificacao = true
+            console.log(`Aluno `)
+        }
+    }
+    if (verificacao == false) {
+        console.log(`Aluno(a) ${nome_aluno} não encontrado!`)
+    }
 }   
 
 let id = 1;

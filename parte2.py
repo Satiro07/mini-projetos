@@ -23,7 +23,7 @@ def adicionar_tarefas(lista):
                 verificacao = True
                 escolha = 's'
                 while escolha != 'n':
-                    tarefa = input('Digite uma tarefa: ')
+                    tarefa = input('Digite uma tarefa: ').strip()
                     if tarefa != '':
                         categoria[1].append(tarefa)
                     else:

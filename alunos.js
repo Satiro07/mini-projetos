@@ -5,11 +5,11 @@ const menu = () => {
     console.log('MENU')
     console.log(' 1. adicionar aluno(a)\n 2. listar alunos\n 3. buscar aluno(a)\n 4. editar aluno(a)\n 5. exluir aluno(a)\n 6. sair')
     let escolha = prompt('Escolha uma opção: ')
-    return escolha;
+    return escolha
 };
 
 const add_alunos = (id) => {
-    let nome = prompt('Nome do aluno(a): ');
+    let nome = prompt('Nome do aluno(a): ')
     let notas = []
     for (let i = 1; i <= 3; i++) {
         let nota = parseFloat(prompt(`Nota ${i} do aluno(a): `));

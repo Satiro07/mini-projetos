@@ -33,7 +33,7 @@ function listar_alunos () {
     }
 };
 
-function buscar_aluno () {
+const buscar_aluno = () => {
     let buscar_nome = prompt('Nome do aluno(a) que deseja procurar: ');
     let verificacao = false;
     for (let aluno of alunos) {

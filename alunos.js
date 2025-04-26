@@ -12,8 +12,8 @@ const add_alunos = (id) => {
     let nome = prompt('Nome do aluno(a): ')
     let notas = []
     for (let i = 1; i <= 3; i++) {
-        let nota = parseFloat(prompt(`Nota ${i} do aluno(a): `));
-        notas.push(nota);
+        let nota = parseFloat(prompt(`Nota ${i} do aluno(a): `))
+        notas.push(nota)
     }
 
     console.log(`Aluno(a) ${nome} adicionado com sucesso!`)

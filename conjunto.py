@@ -31,8 +31,10 @@ def adicionar_tarefas():
         print(f'Categoria "{nome_escolha_categoria}" não encontrada!')
         opcao = input('Deseja adicionar ela? [s/n] ').lower()
         if opcao == 's':
-            categorias.append([nome_escolha_categoria, []])
-            print(f'Categoria {nome_escolha_categoria} adicionada com sucesso!')
+            nome_categoria = input('Digito o nome da categoria que quer adicionar: ')
+            categorias.append([nome_categoria, []])
+            print(f'Categoria {nome_categoria} adicionada com sucesso!')
+            adicionar_tarefas()
         
 
 

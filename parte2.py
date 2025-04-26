@@ -2,7 +2,10 @@
 def adicionar_categorias(lista):
     esc = 's'
     while esc != 'n':
-        nome_escolha_categoria = input('Nome da categoria: ')
+        nome_escolha_categoria = input('Nome da categoria: ').strip()
+        if nome_escolha_categoria == '':
+            print('Você precisa digitar algo!')
+            continue
         if nome_escolha_categoria not in lista:
             lista.append([nome_escolha_categoria, []])
             print(f'Categoria {nome_escolha_categoria} adicionada com sucesso!')

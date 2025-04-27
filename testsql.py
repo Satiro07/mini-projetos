@@ -1,10 +1,10 @@
 import psycopg2
 
 conexao = psycopg2.connect(
-    nome_banco = "aguas_test",
-    usuario = "postgres",
-    senha = "162403",
-    local = "localhost"
+    dbname = "aguas_test",
+    user = "postgres",
+    password = "162403",
+    host = "localhost"
 )
 
 executar = conexao.cursor()

@@ -62,3 +62,11 @@
 #         print(letra, end=' ')
 #     print()
     
+
+clientes = []
+cliente = {}
+nome = 'joao'
+id = 1
+cliente[nome] = id
+clientes.append([cliente])
+print(clientes)

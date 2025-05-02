@@ -59,10 +59,14 @@ def add_valor_pedido():
 def listar_clientes():
     executar.execute('SELECT c.nome_cliente AS "Nome do cliente", p.valor_pedido AS "Valor do pedido", p.data_pedido AS "Data do pedido", p.descricao AS "Descrição do pedido" FROM pedidos p INNER JOIN clientes c ON p.id_cliente = c.id_cliente')
     clientes_pedidos = executar.fetchall()
+    print()
     for cliente in clientes_pedidos:
         print(f'Nome do cliente: {cliente[0]}')
         print(f'Valor do pedido: R${cliente[1]}, Data do pedido: {cliente[2]}')
         print(f'Descrição do pedido: {cliente[3]}')
+        print()
+        print('_'*50)
+        print()
 
 def atualizar_valor():
     editar = input('O que deseja editar? [valor = 1, data = 2, descricao = 3] ')

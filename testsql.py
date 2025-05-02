@@ -63,7 +63,7 @@ def listar_clientes():
         print(f'Nome do cliente: {cliente[0]}, Valor do pedido: R${cliente[1]:.2f}, Data do pedido: {cliente[2]}, Descrição do pedido: {cliente[3]}')
 
 def atualizar_valor():
-    editar = input('O que deseja editar? [valor = 1, data = 2] ')
+    editar = input('O que deseja editar? [valor = 1, data = 2, descricao = 3] ')
     if editar == '1':
         executar.execute('SELECT p.id_pedido AS "ID do pedido", c.nome_cliente AS "Nome do cliente", p.valor_pedido AS "Valor do pedido" FROM pedidos p INNER JOIN clientes c ON p.id_cliente = c.id_cliente')
         clientes_pedidos = executar.fetchall()
@@ -82,7 +82,15 @@ def atualizar_valor():
         nova_data = input('Data atualizada do pedido (Formato: YYYY-MM-DD): ')
         executar.execute("UPDATE pedidos SET data_pedido = (%s) WHERE id_pedido = (%s);", (nova_data, id_pedido))
         conexao.commit()
-
+    elif editar == '3':
+        executar.execute('SELECT p.id_pedido AS "ID do pedido", c.nome_cliente AS "Nome do cliente", p.valor_pedido AS "Valor do pedido", p.data_pedido AS "Data do pedido", p.descricao FROM pedidos p INNER JOIN clientes c ON p.id_cliente = c.id_cliente')
+        clientes_pedidos = executar.fetchall()
+        for cliente in clientes_pedidos:
+            print(f'ID pedido: {cliente[0]}, Nome do cliente: {cliente[1]}, Valor do pedido: R${cliente[2]}, Data do pedido: {cliente[3]}, Descrição: {cliente[4]}')
+        id_pedido = int(input('ID do pedido que deseja mudar o valor: '))
+        nova_descricao = input('Descrição atualizada do pedido: ')
+        executar.execute("UPDATE pedidos SET descricao = (%s) WHERE id_pedido = (%s);", (nova_descricao, id_pedido))
+        conexao.commit()
 
 while True:
     resp = menu(0)

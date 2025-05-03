@@ -46,16 +46,24 @@ def adicionar_cliente():
     
 
 def add_valor_pedido():
+    verificacao = False
     executar.execute("SELECT * FROM clientes")
     clientes = executar.fetchall()
     for cliente in clientes:
         print(f'ID: {cliente[0]}, Nome: {cliente[1]}')
     id_cliente = int(input('ID do cliente no qual você deseja adicionar valor: '))
-    valor_pedido = float(input('Valor do pedido R$'))
-    data_pedido = input('Data do pedido (Formato: YYYY-MM-DD): ')
-    descricao = input('Descrição do pedido: ')
-    executar.execute("INSERT INTO pedidos (id_cliente, valor_pedido, data_pedido, descricao) VALUES (%s, %s, %s, %s)", (id_cliente, valor_pedido, data_pedido, descricao))
-    conexao.commit()
+    for cliente in clientes:
+        if cliente[0] == id_cliente:
+            verificacao = True
+    if verificacao == True:
+        valor_pedido = float(input('Valor do pedido R$'))
+        data_pedido = input('Data do pedido (Formato: YYYY-MM-DD): ')
+        descricao = input('Descrição do pedido: ')
+        executar.execute("INSERT INTO pedidos (id_cliente, valor_pedido, data_pedido, descricao) VALUES (%s, %s, %s, %s)", (id_cliente, valor_pedido, data_pedido, descricao))
+        conexao.commit()
+        print('Informações adicionadas!')
+    else:
+        print('Nenhum cliente com esse ID!')
 
 def listar_clientes():
     executar.execute('SELECT c.nome_cliente AS "Nome do cliente", p.valor_pedido AS "Valor do pedido", p.data_pedido AS "Data do pedido", p.descricao AS "Descrição do pedido" FROM pedidos p INNER JOIN clientes c ON p.id_cliente = c.id_cliente')

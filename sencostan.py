@@ -1,4 +1,4 @@
-from math import cos
+from math import sin
 def seno(angulo):
     seno = angulo * (3.14159/180)
     return seno
@@ -13,4 +13,4 @@ def cosseno(angulo):
 
 print(cosseno(30))
 
-print(cos(0.523598))
+print(sin(0.523598))
